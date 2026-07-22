@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>职业与选择 · 纳瓦尔深度拓展</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet"><style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Serif SC',serif;background:#f9f7f4;color:#2c2c2c;line-height:1.9;-webkit-font-smoothing:antialiased}
+:root{--c:#4A6FA5}.top-bar{position:sticky;top:0;z-index:100;background:rgba(249,247,244,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.04);padding:0.7rem 1.5rem;display:flex;align-items:center;gap:0.8rem;font-size:0.82rem;font-family:'Inter',sans-serif}.top-bar a{color:#999;text-decoration:none;transition:color 0.2s}.top-bar a:hover{color:#333}.top-bar span{color:#ccc}.top-bar .sec-title{color:var(--c);font-weight:600;margin-left:auto;font-size:0.78rem;letter-spacing:0.03em}
+.hero-sm{background:linear-gradient(165deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);padding:3rem 1.5rem;text-align:center;position:relative;overflow:hidden}.hero-sm h1{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;color:#fff;position:relative;z-index:1}.hero-sm h1 em{font-style:normal;color:var(--c)}.hero-sm .sub{font-family:'Inter',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.4);margin-top:0.4rem;position:relative;z-index:1}
+main{max-width:800px;margin:0 auto;padding:2.5rem 1.2rem 4rem}
+.section-header{display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(0,0,0,0.05)}.section-svg{width:90px;height:90px;flex-shrink:0}.section-info .num{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;color:var(--c);opacity:0.5}.section-info h2{font-size:1.4rem;font-weight:700;color:var(--c);margin-top:0.1rem}.section-info .desc{font-size:0.82rem;color:#999;margin-top:0.2rem;font-family:'Inter',sans-serif}
+.principle{margin-bottom:2rem;padding:1.8rem;background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,0.02),0 4px 20px rgba(0,0,0,0.03);transition:all 0.3s;opacity:0;transform:translateY(16px)}.principle.visible{opacity:1;transform:translateY(0)}.principle:hover{box-shadow:0 2px 8px rgba(0,0,0,0.03),0 12px 40px rgba(0,0,0,0.05)}.principle .idx{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;color:var(--c);letter-spacing:0.08em;margin-bottom:0.5rem}.principle .title{font-size:1.05rem;font-weight:700;color:#1a1a2e;line-height:1.5;margin-bottom:0.8rem}.orig-box{border-left:3px solid var(--c);padding:0.7rem 1rem;border-radius:0 8px 8px 0;margin-bottom:1rem;background:rgba(0,0,0,0.012);font-size:0.88rem}.orig-box .lbl{font-family:'Inter',sans-serif;font-size:0.55rem;font-weight:600;letter-spacing:0.08em;color:var(--c);margin-bottom:0.15rem}.orig-box .q{font-weight:600;color:#1a1a2e}.orig-box .e{color:#888;margin-top:0.1rem;font-size:0.84rem}.body{font-size:0.9rem;line-height:1.8;color:#3a3a3a}.body strong{color:#1a1a2e;font-weight:700}.body .tag{display:inline-block;font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:600;color:var(--c);border:1px solid var(--c);border-radius:3px;padding:0.02rem 0.5rem;margin-right:0.25rem;opacity:0.65;white-space:nowrap}.body p{margin-bottom:0.5rem}.sec-end{display:flex;justify-content:center;gap:0.5rem;padding:1rem 0 0.5rem}.sec-end span{width:4px;height:4px;border-radius:50%;background:var(--c);opacity:0.2;animation:pulse 2s ease-in-out infinite}.sec-end span:nth-child(2){animation-delay:0.4s}.sec-end span:nth-child(3){animation-delay:0.8s}@keyframes pulse{0%,100%{opacity:0.2}50%{opacity:0.5}}
+footer{text-align:center;padding:2rem 1.5rem;font-family:'Inter',sans-serif;font-size:0.75rem;color:#bbb}
+@media(max-width:768px){
+  .top-bar{padding:0.5rem 0.8rem;font-size:0.72rem;flex-wrap:wrap;gap:0.4rem}
+  .top-bar .sec-title{font-size:0.68rem;margin-left:0;width:100%;text-align:right}
+  .hero-sm{padding:2rem 1rem}
+  .hero-sm h1{font-size:1.3rem}
+  .hero-sm .sub{font-size:0.72rem}
+  .section-header{flex-direction:column;gap:0.8rem;align-items:flex-start}
+  .section-svg{width:60px;height:60px}
+  .section-info h2{font-size:1.15rem}
+  .principle{padding:1.2rem;margin-bottom:1.2rem}
+  .principle .title{font-size:0.95rem}
+  .orig-box{font-size:0.82rem;padding:0.6rem 0.8rem}
+  .body{font-size:0.84rem}
+}
+@media(max-width:480px){
+  main{padding:1.2rem 0.6rem 2rem}
+  .principle{padding:1rem;border-radius:12px}
+  .principle .title{font-size:0.9rem}
+  .body{font-size:0.8rem}
+  .body .tag{font-size:0.6rem;padding:0 0.35rem}
+}
+</style></head><body>
+<div class="top-bar"><a href="naval-index.html">← 总览</a><span>|</span><span style="color:#999;font-size:0.75rem">纳瓦尔的40则人生建议</span><span class="sec-title">三 · 职业与选择</span></div>
+<div class="hero-sm"><h1>职业与<em>选择</em></h1><div class="sub">职业路径中的关键决策与杠杆效应 · 6 条建议</div></div>
+<main id="root"></main>
+<footer>纳瓦尔的40则人生建议 · 深度拓展</footer>
+<script>
+const C='#4A6FA5',data=[
+[19,'选择正确的行业，比努力程度更重要','选择正确的行业，比努力程度更重要。','在增长行业里普通努力也能成功，在衰退行业里再努力也很难。','<p><strong>行业增长率效应</strong>有坚实的实证基础。在不同行业之间，同样能力的人收入差距可达 3-10 倍——这主要是行业增长率和利润结构的差异，而非个人能力（Krueger &amp; Summers, 1988）。</p><p><span class="tag">产业生命周期</span> 在成长期进入的人，即使能力一般，也随行业扩张获得红利；在衰退期的人，即使能力超群，也在逆水行舟。</p><p><span class="tag">沉没成本谬误</span> 人们倾向于留在已投入多年的萎缩行业——但过去投入的时间不应影响未来选择。</p>'],
+[20,'选择和聪明、正直的人合作','选择和聪明、正直的人合作。','优秀的人会放大你的能力，糟糕的人会拖累你。','<p><span class="tag">团队生产理论</span> 最终产出是团队协同的产物，团队成员质量直接影响整体产出。</p><p><span class="tag">群体智慧</span> Woolley et al.（2010, <em>Science</em>）发现群体智慧的最佳预测因子是：社会敏感度、发言的平等性。正直是社会敏感度的基础。</p><p><span class="tag">知识溢出</span> 与聪明人相邻工作会接收到无法从书本获取的隐性知识和思维模式（Audretsch &amp; Feldman, 1996）。</p>'],
+[21,'职业成功往往来自非线性回报','职业成功往往来自非线性回报。','创业、投资、产品等领域，成功一次可能带来巨大回报。','<p><strong>幂律分布（Power Law Distribution）</strong>在职业成功中无处不在——无论是创业、科研、艺术还是体育，回报都呈极端偏态分布。</p><p>两个核心机制：<strong>马太效应</strong>（初始微小优势通过累积放大）和<strong>偏好依附</strong>（新连接倾向于附着在已有连接的节点上）。</p><p><span class="tag">合理策略</span> 接受<strong>大量小规模实验</strong>，用统计学概率对冲幂律的不确定性——风险投资的"撒网"策略：少数成功弥补所有损失。</p>'],
+[22,'找到你天生擅长且社会需要的事情','找到你天生擅长且社会需要的事情。','最好的职业是天赋、兴趣和市场需求的交集。','<p>这是个人版的"市场匹配"——你的供应（天赋+兴趣）与社会需求（市场需要）的交集。</p><p><span class="tag">Ikigai 模型</span> 四圆交集：热爱的 × 擅长的 × 世界需要的 × 能获报酬的。</p><p><span class="tag">优势理论</span> Gallup 基于 40 年研究发现，专注于发挥优势而非弥补短板，工作效率和幸福指数显著更高（Clifton &amp; Harter, 2003）。</p>'],
+[23,'不要只为钱工作','不要只为钱工作。','如果只看短期收入，往往会错过长期成长机会。','<p><span class="tag">过度合理化效应</span> 当人们对活动有内在兴趣时，引入外部奖励反而会降低内在动机（Lepper et al., 1973）。</p><p><span class="tag">享乐适应</span> 年收入约 $75,000 后，收入增长不再显著提升日常情绪幸福感（Kahneman &amp; Deaton, 2010）。但为高薪选择不喜欢的高压行业带来的痛苦没有这种适应机制。</p><p><span class="tag">职业资本</span> 最佳选择不是最大化当前收入，而是最大化<strong>职业资本</strong>——技能、经验、人脉和声誉（Ibarra, 2003）。</p>'],
+[24,'把时间花在高杠杆的事情上','把时间花在高杠杆的事情上。','比如创造产品、建立系统，而不是重复性的工作。','<p><strong>帕累托原则（80/20 法则）</strong>——约 20% 的活动创造 80% 的价值。识别这 20% 并将其放大就是"高杠杆事情"的核心。</p><p><span class="tag">时间管理矩阵</span> 高杠杆事情往往是"重要但不紧急"的——长期战略、能力建设、关系维护。它们容易被无限推迟，但长期杠杆率最高。</p><p><span class="tag">注意力管理</span> 注意力切换成本是知识工作中最大的隐性成本。每次切换平均需约 23 分钟才能重新进入深度工作状态（Mark et al., 2005）。</p>']
+];
+const root=document.getElementById('root');
+root.innerHTML=`<div class="section-header"><div class="section-svg"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="40" stroke="${C}" stroke-width="1.5" fill="none" opacity="0.3"/><circle cx="60" cy="60" r="38" stroke="${C}" stroke-width="0.3" fill="none" opacity="0.15" stroke-dasharray="3 3"/><line x1="60" y1="60" x2="60" y2="28" stroke="${C}" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/><line x1="60" y1="60" x2="60" y2="92" stroke="${C}" stroke-width="1" stroke-linecap="round" opacity="0.3"/><line x1="60" y1="60" x2="90" y2="60" stroke="${C}" stroke-width="1" stroke-linecap="round" opacity="0.3"/><line x1="60" y1="60" x2="30" y2="60" stroke="${C}" stroke-width="1" stroke-linecap="round" opacity="0.3"/><circle cx="60" cy="60" r="3" fill="${C}" opacity="0.5"/><text x="60" y="20" text-anchor="middle" fill="${C}" font-size="8" font-family="Inter" font-weight="600" opacity="0.6">N</text></svg></div><div class="section-info"><div class="num">三 · 3/6</div><h2>职业与选择</h2><div class="desc">职业路径中的关键决策与杠杆效应</div></div></div>`+
+data.map(d=>`<div class="principle"><div class="idx">#${d[0]} / 40</div><div class="title">${d[1]}</div><div class="orig-box"><div class="lbl">原文</div><div class="q">${d[2]}</div><div class="e">${d[3]}</div></div><div class="body">${d[4]}</div></div>`).join('')+
+`<div class="sec-end"><span></span><span></span><span></span></div>`;
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.principle').forEach(el=>obs.observe(el));
+</script></body></html>

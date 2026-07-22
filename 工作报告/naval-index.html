@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纳瓦尔的40则人生建议 · 深度拓展</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Serif SC',serif;
+  background:#f9f7f4;color:#2c2c2c;
+  line-height:1.9;-webkit-font-smoothing:antialiased;
+}
+:root{--c1:#C49B3C;--c2:#5B8C5A;--c3:#4A6FA5;--c4:#C97B84;--c5:#8B7EAC;--c6:#4A8C8C}
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  padding:2rem;position:relative;overflow:hidden;
+  background:linear-gradient(165deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);
+}
+.hero-bg-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:0.15;pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:700px}
+.hero-badge{
+  display:inline-block;font-family:'Inter',sans-serif;
+  font-size:0.75rem;font-weight:600;letter-spacing:0.15em;
+  text-transform:uppercase;color:rgba(255,255,255,0.4);
+  border:1px solid rgba(255,255,255,0.1);padding:0.4rem 1.2rem;
+  border-radius:100px;margin-bottom:2rem;
+}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;color:#fff;line-height:1.25;letter-spacing:0.02em}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(135deg,#C49B3C,#D4A853);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.55);margin-top:1.2rem;font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0.08em}
+main{max-width:960px;margin:0 auto;padding:4rem 1.5rem 6rem}
+.section-title{text-align:center;margin-bottom:3rem}
+.section-title h2{font-size:1.8rem;font-weight:700;color:#1a1a2e}
+.section-title p{color:#999;font-size:0.95rem;margin-top:0.3rem;font-family:'Inter',sans-serif}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.card{
+  background:#fff;border-radius:18px;padding:1.8rem 1.5rem;
+  text-decoration:none;color:inherit;
+  box-shadow:0 1px 4px rgba(0,0,0,0.03),0 4px 24px rgba(0,0,0,0.04);
+  transition:all 0.3s;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 4px 16px rgba(0,0,0,0.06),0 12px 48px rgba(0,0,0,0.08)}
+.card-top{display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem}
+.card-svg{width:56px;height:56px;flex-shrink:0}
+.card-num{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase}
+.card-title{font-size:1.15rem;font-weight:700;margin-bottom:0.3rem}
+.card-desc{font-size:0.85rem;color:#999;line-height:1.6;font-family:'Inter',sans-serif}
+.card-count{font-family:'Inter',sans-serif;font-size:0.75rem;color:#bbb;margin-top:auto;padding-top:0.8rem}
+.card-accent{position:absolute;top:0;left:0;right:0;height:3px}
+.card-1 .card-accent{background:var(--c1)}.card-1 .card-num,.card-1 .card-title{color:var(--c1)}
+.card-2 .card-accent{background:var(--c2)}.card-2 .card-num,.card-2 .card-title{color:var(--c2)}
+.card-3 .card-accent{background:var(--c3)}.card-3 .card-num,.card-3 .card-title{color:var(--c3)}
+.card-4 .card-accent{background:var(--c4)}.card-4 .card-num,.card-4 .card-title{color:var(--c4)}
+.card-5 .card-accent{background:var(--c5)}.card-5 .card-num,.card-5 .card-title{color:var(--c5)}
+.card-6 .card-accent{background:var(--c6)}.card-6 .card-num,.card-6 .card-title{color:var(--c6)}
+footer{text-align:center;padding:2rem 1.5rem 4rem;font-family:'Inter',sans-serif;font-size:0.78rem;color:#bbb}
+@media(max-width:768px){
+  .hero{min-height:80vh;padding:1.5rem}
+  .hero h1{font-size:clamp(1.8rem,5vw,2.4rem)}
+  .hero-sub{font-size:0.9rem}
+  .grid{grid-template-columns:1fr;gap:0.8rem}
+  main{padding:2rem 1rem 3rem}
+  .section-title h2{font-size:1.4rem}
+  .card{padding:1.2rem 1rem}
+  .card-svg{width:40px;height:40px}
+  .card-title{font-size:1rem}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.6rem}
+  .hero-badge{font-size:0.65rem;padding:0.3rem 0.8rem;margin-bottom:1.2rem}
+  .hero-sub{font-size:0.8rem}
+  .section-title h2{font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+<section class="hero">
+  <svg class="hero-bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C49B3C"/><stop offset="100%" stop-color="#4A6FA5"/></linearGradient>
+      <linearGradient id="hg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#C97B84"/><stop offset="100%" stop-color="#5B8C5A"/></linearGradient>
+    </defs>
+    <g stroke="rgba(255,255,255,0.06)" fill="none" stroke-width="0.5">
+      <line x1="100" y1="200" x2="350" y2="150"/><line x1="350" y1="150" x2="520" y2="320"/>
+      <line x1="520" y1="320" x2="420" y2="500"/><line x1="420" y1="500" x2="180" y2="480"/>
+      <line x1="180" y1="480" x2="100" y2="200"/>
+      <line x1="900" y1="100" x2="1200" y2="180"/><line x1="1200" y1="180" x2="1350" y2="350"/>
+      <line x1="1350" y1="350" x2="1200" y2="600"/><line x1="1200" y1="600" x2="950" y2="550"/>
+      <line x1="950" y1="550" x2="900" y2="100"/>
+      <line x1="350" y1="150" x2="900" y2="100"/>
+      <line x1="520" y1="320" x2="1350" y2="350"/>
+      <line x1="420" y1="500" x2="950" y2="550"/>
+      <line x1="180" y1="480" x2="1200" y2="600"/>
+      <line x1="600" y1="700" x2="750" y2="800"/><line x1="750" y1="800" x2="850" y2="700"/><line x1="850" y1="700" x2="600" y2="700"/>
+    </g>
+    <g fill="rgba(255,255,255,0.12)">
+      <circle cx="350" cy="150" r="4"/><circle cx="520" cy="320" r="3"/><circle cx="420" cy="500" r="3"/>
+      <circle cx="900" cy="100" r="4"/><circle cx="1200" cy="180" r="3.5"/><circle cx="1350" cy="350" r="3"/>
+      <circle cx="100" cy="200" r="2.5"/><circle cx="750" cy="800" r="3"/><circle cx="600" cy="700" r="2"/>
+    </g>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-badge">纳瓦尔的40则人生建议</div>
+    <h1>纳瓦尔的<span>40</span>则人生建议<em> · 深度拓展</em></h1>
+    <p class="hero-sub">每条从科学原理、底层逻辑、实证研究、跨学科视角展开剖析</p>
+  </div>
+</section>
+<main>
+<div class="section-title">
+  <h2>六大板块</h2>
+  <p>选择一个分类，浏览对应的深度拓展内容</p>
+</div>
+<div class="grid">
+
+<a class="card card-1" href="naval-01.html">
+  <div class="card-accent"></div>
+  <div class="card-top">
+    <div class="card-svg"><svg viewBox="0 0 120 120"><path d="M10 100 Q 30 100 50 80 Q 70 55 90 30 Q 100 18 110 10" stroke="#C49B3C" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/><rect x="20" y="88" width="8" height="12" rx="2" fill="#C49B3C" opacity="0.3"/><rect x="35" y="82" width="8" height="18" rx="2" fill="#C49B3C" opacity="0.4"/><rect x="50" y="72" width="8" height="28" rx="2" fill="#C49B3C" opacity="0.5"/><rect x="65" y="55" width="8" height="45" rx="2" fill="#C49B3C" opacity="0.6"/><rect x="80" y="30" width="8" height="70" rx="2" fill="#C49B3C" opacity="0.75"/><circle cx="110" cy="10" r="3" fill="#C49B3C" opacity="0.5"/></svg></div>
+    <div class="card-num">一</div>
+  </div>
+  <div class="card-title">财富与赚钱</div>
+  <div class="card-desc">财富的真正定义与创造的底层逻辑。从资产、股权、杠杆到复利、第一性原理。</div>
+  <div class="card-count">10 条建议</div>
+</a>
+
+<a class="card card-2" href="naval-02.html">
+  <div class="card-accent"></div>
+  <div class="card-top">
+    <div class="card-svg"><svg viewBox="0 0 120 120"><rect x="28" y="60" width="64" height="6" rx="2" fill="#5B8C5A" opacity="0.2"/><rect x="26" y="53" width="68" height="7" rx="2" fill="#5B8C5A" opacity="0.3"/><rect x="24" y="45" width="72" height="8" rx="2" fill="#5B8C5A" opacity="0.45"/><rect x="22" y="36" width="76" height="9" rx="2" fill="#5B8C5A" opacity="0.6"/><rect x="20" y="26" width="80" height="10" rx="2" fill="#5B8C5A" opacity="0.8"/><line x1="20" y1="26" x2="20" y2="66" stroke="#5B8C5A" stroke-width="2" opacity="0.4"/><circle cx="94" cy="20" r="1.5" fill="#5B8C5A" opacity="0.5"/><circle cx="102" cy="30" r="1" fill="#5B8C5A" opacity="0.3"/></svg></div>
+    <div class="card-num">二</div>
+  </div>
+  <div class="card-title">学习与成长</div>
+  <div class="card-desc">如何构建终身学习与深度认知的能力。元认知、阅读、好奇心、第一性原理。</div>
+  <div class="card-count">8 条建议</div>
+</a>
+
+<a class="card card-3" href="naval-03.html">
+  <div class="card-accent"></div>
+  <div class="card-top">
+    <div class="card-svg"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="40" stroke="#4A6FA5" stroke-width="1.5" fill="none" opacity="0.3"/><circle cx="60" cy="60" r="38" stroke="#4A6FA5" stroke-width="0.3" fill="none" opacity="0.15" stroke-dasharray="3 3"/><line x1="60" y1="60" x2="60" y2="28" stroke="#4A6FA5" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/><line x1="60" y1="60" x2="60" y2="92" stroke="#4A6FA5" stroke-width="1" stroke-linecap="round" opacity="0.3"/><line x1="60" y1="60" x2="90" y2="60" stroke="#4A6FA5" stroke-width="1" stroke-linecap="round" opacity="0.3"/><line x1="60" y1="60" x2="30" y2="60" stroke="#4A6FA5" stroke-width="1" stroke-linecap="round" opacity="0.3"/><circle cx="60" cy="60" r="3" fill="#4A6FA5" opacity="0.5"/><text x="60" y="20" text-anchor="middle" fill="#4A6FA5" font-size="8" font-family="Inter" font-weight="600" opacity="0.6">N</text></svg></div>
+    <div class="card-num">三</div>
+  </div>
+  <div class="card-title">职业与选择</div>
+  <div class="card-desc">职业路径中的关键决策与杠杆效应。行业选择、合作伙伴、非线性回报。</div>
+  <div class="card-count">6 条建议</div>
+</a>
+
+<a class="card card-4" href="naval-04.html">
+  <div class="card-accent"></div>
+  <div class="card-top">
+    <div class="card-svg"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="45" stroke="#C97B84" stroke-width="0.5" fill="none" opacity="0.15"/><circle cx="60" cy="60" r="35" stroke="#C97B84" stroke-width="0.5" fill="none" opacity="0.2"/><circle cx="60" cy="60" r="25" stroke="#C97B84" stroke-width="0.5" fill="none" opacity="0.3"/><path d="M60 60 Q 40 35 60 20 Q 80 35 60 60" fill="#C97B84" opacity="0.12"/><path d="M60 60 Q 85 40 100 60 Q 85 80 60 60" fill="#C97B84" opacity="0.12"/><path d="M60 60 Q 35 40 20 60 Q 35 80 60 60" fill="#C97B84" opacity="0.12"/><path d="M60 60 Q 80 85 60 100 Q 40 85 60 60" fill="#C97B84" opacity="0.12"/><circle cx="60" cy="60" r="4" fill="#C97B84" opacity="0.5"/><circle cx="60" cy="60" r="2" fill="#C97B84" opacity="0.7"/></svg></div>
+    <div class="card-num">四</div>
+  </div>
+  <div class="card-title">幸福与人生</div>
+  <div class="card-desc">幸福的科学基础与内在修炼路径。神经可塑性、欲望管理、正念冥想。</div>
+  <div class="card-count">6 条建议</div>
+</a>
+
+<a class="card card-5" href="naval-05.html">
+  <div class="card-accent"></div>
+  <div class="card-top">
+    <div class="card-svg"><svg viewBox="0 0 120 120"><line x1="35" y1="18" x2="85" y2="18" stroke="#8B7EAC" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><line x1="35" y1="102" x2="85" y2="102" stroke="#8B7EAC" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><line x1="35" y1="18" x2="42" y2="102" stroke="#8B7EAC" stroke-width="1.2" opacity="0.35"/><line x1="85" y1="18" x2="78" y2="102" stroke="#8B7EAC" stroke-width="1.2" opacity="0.35"/><path d="M46 45 Q 60 50 74 45" stroke="#8B7EAC" stroke-width="0.8" fill="none" opacity="0.3"/><path d="M46 70 Q 60 80 74 70" stroke="#8B7EAC" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="56" cy="55" r="1" fill="#8B7EAC" opacity="0.5"/><circle cx="64" cy="58" r="1" fill="#8B7EAC" opacity="0.4"/></svg></div>
+    <div class="card-num">五</div>
+  </div>
+  <div class="card-title">时间与生活方式</div>
+  <div class="card-desc">如何看待时间、精力与生活的基本面。稀缺性、情绪传染、简化生活。</div>
+  <div class="card-count">5 条建议</div>
+</a>
+
+<a class="card card-6" href="naval-06.html">
+  <div class="card-accent"></div>
+  <div class="card-top">
+    <div class="card-svg"><svg viewBox="0 0 120 120"><g stroke="#4A8C8C" stroke-width="0.8" opacity="0.3"><line x1="60" y1="20" x2="30" y2="50"/><line x1="60" y1="20" x2="90" y2="50"/><line x1="30" y1="50" x2="20" y2="85"/><line x1="30" y1="50" x2="60" y2="60"/><line x1="90" y1="50" x2="100" y2="85"/><line x1="90" y1="50" x2="60" y2="60"/><line x1="60" y1="60" x2="40" y2="90"/><line x1="60" y1="60" x2="80" y2="90"/></g><g fill="#4A8C8C"><circle cx="60" cy="20" r="4" opacity="0.65"/><circle cx="30" cy="50" r="3" opacity="0.45"/><circle cx="90" cy="50" r="3" opacity="0.45"/><circle cx="60" cy="60" r="3.5" opacity="0.55"/><circle cx="20" cy="85" r="2.5" opacity="0.35"/><circle cx="100" cy="85" r="2.5" opacity="0.35"/></g></svg></div>
+    <div class="card-num">六</div>
+  </div>
+  <div class="card-title">思维方式</div>
+  <div class="card-desc">塑造高质量思考的底层框架。长期主义、真理、独立思考。</div>
+  <div class="card-count">5 条建议</div>
+</a>
+
+</div>
+</main>
+<footer>纳瓦尔的40则人生建议 · 深度拓展</footer>
+</body>
+</html>

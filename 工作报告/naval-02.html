@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>学习与成长 · 纳瓦尔深度拓展</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet"><style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Serif SC',serif;background:#f9f7f4;color:#2c2c2c;line-height:1.9;-webkit-font-smoothing:antialiased}
+:root{--c:#5B8C5A}.top-bar{position:sticky;top:0;z-index:100;background:rgba(249,247,244,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.04);padding:0.7rem 1.5rem;display:flex;align-items:center;gap:0.8rem;font-size:0.82rem;font-family:'Inter',sans-serif}.top-bar a{color:#999;text-decoration:none;transition:color 0.2s}.top-bar a:hover{color:#333}.top-bar span{color:#ccc}.top-bar .sec-title{color:var(--c);font-weight:600;margin-left:auto;font-size:0.78rem;letter-spacing:0.03em}
+.hero-sm{background:linear-gradient(165deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);padding:3rem 1.5rem;text-align:center;position:relative;overflow:hidden}.hero-sm h1{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;color:#fff;position:relative;z-index:1}.hero-sm h1 em{font-style:normal;color:var(--c)}.hero-sm .sub{font-family:'Inter',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.4);margin-top:0.4rem;position:relative;z-index:1}
+main{max-width:800px;margin:0 auto;padding:2.5rem 1.2rem 4rem}
+.section-header{display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(0,0,0,0.05)}.section-svg{width:90px;height:90px;flex-shrink:0}.section-info .num{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;color:var(--c);opacity:0.5}.section-info h2{font-size:1.4rem;font-weight:700;color:var(--c);margin-top:0.1rem}.section-info .desc{font-size:0.82rem;color:#999;margin-top:0.2rem;font-family:'Inter',sans-serif}
+.principle{margin-bottom:2rem;padding:1.8rem;background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,0.02),0 4px 20px rgba(0,0,0,0.03);transition:all 0.3s;opacity:0;transform:translateY(16px)}.principle.visible{opacity:1;transform:translateY(0)}.principle:hover{box-shadow:0 2px 8px rgba(0,0,0,0.03),0 12px 40px rgba(0,0,0,0.05)}.principle .idx{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;color:var(--c);letter-spacing:0.08em;margin-bottom:0.5rem}.principle .title{font-size:1.05rem;font-weight:700;color:#1a1a2e;line-height:1.5;margin-bottom:0.8rem}.orig-box{border-left:3px solid var(--c);padding:0.7rem 1rem;border-radius:0 8px 8px 0;margin-bottom:1rem;background:rgba(0,0,0,0.012);font-size:0.88rem}.orig-box .lbl{font-family:'Inter',sans-serif;font-size:0.55rem;font-weight:600;letter-spacing:0.08em;color:var(--c);margin-bottom:0.15rem}.orig-box .q{font-weight:600;color:#1a1a2e}.orig-box .e{color:#888;margin-top:0.1rem;font-size:0.84rem}.body{font-size:0.9rem;line-height:1.8;color:#3a3a3a}.body strong{color:#1a1a2e;font-weight:700}.body .tag{display:inline-block;font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:600;color:var(--c);border:1px solid var(--c);border-radius:3px;padding:0.02rem 0.5rem;margin-right:0.25rem;opacity:0.65;white-space:nowrap}.body p{margin-bottom:0.5rem}.body ul{list-style:none;padding:0.3rem 0 0.2rem 0.3rem}.body ul li{position:relative;padding-left:1.1rem;margin-bottom:0.35rem}.body ul li::before{content:'';position:absolute;left:0;top:0.7em;width:4px;height:4px;border-radius:50%;background:var(--c);opacity:0.35}.body code{font-family:'Inter',monospace;font-size:0.82em;background:rgba(0,0,0,0.04);padding:0.1em 0.35em;border-radius:3px;color:#555}.sec-end{display:flex;justify-content:center;gap:0.5rem;padding:1rem 0 0.5rem}.sec-end span{width:4px;height:4px;border-radius:50%;background:var(--c);opacity:0.2;animation:pulse 2s ease-in-out infinite}.sec-end span:nth-child(2){animation-delay:0.4s}.sec-end span:nth-child(3){animation-delay:0.8s}@keyframes pulse{0%,100%{opacity:0.2}50%{opacity:0.5}}
+footer{text-align:center;padding:2rem 1.5rem;font-family:'Inter',sans-serif;font-size:0.75rem;color:#bbb}
+@media(max-width:768px){
+  .top-bar{padding:0.5rem 0.8rem;font-size:0.72rem;flex-wrap:wrap;gap:0.4rem}
+  .top-bar .sec-title{font-size:0.68rem;margin-left:0;width:100%;text-align:right}
+  .hero-sm{padding:2rem 1rem}
+  .hero-sm h1{font-size:1.3rem}
+  .hero-sm .sub{font-size:0.72rem}
+  .section-header{flex-direction:column;gap:0.8rem;align-items:flex-start}
+  .section-svg{width:60px;height:60px}
+  .section-info h2{font-size:1.15rem}
+  .principle{padding:1.2rem;margin-bottom:1.2rem}
+  .principle .title{font-size:0.95rem}
+  .orig-box{font-size:0.82rem;padding:0.6rem 0.8rem}
+  .body{font-size:0.84rem}
+}
+@media(max-width:480px){
+  main{padding:1.2rem 0.6rem 2rem}
+  .principle{padding:1rem;border-radius:12px}
+  .principle .title{font-size:0.9rem}
+  .body{font-size:0.8rem}
+  .body .tag{font-size:0.6rem;padding:0 0.35rem}
+}
+</style></head><body>
+<div class="top-bar"><a href="naval-index.html">← 总览</a><span>|</span><span style="color:#999;font-size:0.75rem">纳瓦尔的40则人生建议</span><span class="sec-title">二 · 学习与成长</span></div>
+<div class="hero-sm"><h1>学习与<em>成长</em></h1><div class="sub">如何构建终身学习与深度认知的能力 · 8 条建议</div></div>
+<main id="root"></main>
+<footer>纳瓦尔的40则人生建议 · 深度拓展</footer>
+<script>
+const C='#5B8C5A',data=[
+[11,'学会如何学习，比学习具体知识更重要','学会如何学习，比学习具体知识更重要。','知识会过时，但学习能力可以不断帮助你适应新世界。','<p><strong>元认知（Metacognition）</strong>——"对自己认知过程的认识和控制"——是现代学习科学的核心概念。近 40 年研究表明，元认知能力是学术和职业成功的<strong>最强预测因子之一</strong>，效应量甚至超过智商（Veenman et al., 2006）。</p><p>具体知识有<strong>半衰期</strong>（科技领域约 2-5 年），但元学习能力不会过时——它让你在知识更新时快速重建知识结构。</p><ul><li><strong>间隔重复</strong>：Ebbinghaus 遗忘曲线表明，最佳间隔重复将保留率从 20% 提升到 80%+</li><li><strong>主动回忆</strong>：提取记忆的行为本身强化了记忆（Roediger &amp; Karpicke, 2006）</li><li><strong>交错练习</strong>：混合不同类型的问题效果更好（Rohrer, 2012）</li><li><strong>费曼技巧</strong>：用简单语言解释概念，暴露理解漏洞</li></ul>'],
+[12,'读书是向历史上最聪明的人学习','读书是向历史上最聪明的人学习。','书籍浓缩了人类智慧，是成本最低的学习方式。','<p>读书是<strong>人类最有效的间接学习机制</strong>。文字的发明让知识跨越时空传播——这是人类认知能力的第一次<strong>大规模外化</strong>。</p><p><span class="tag">经济学</span> 一本 200 页的书需要作者 1-5 年写就，读者花 10-20 小时就能获取作者数年的认知产出。</p><p><span class="tag">认知负荷理论</span> 优质书籍的信息组织方式大幅降低<strong>外在认知负荷</strong>，让更多资源用于真正理解概念（Sweller, 1988）。</p><p><span class="tag">神经科学</span> 深度阅读激活的脑区与浏览网页时显著不同（Wolf, 2018）。深度阅读训练<strong>持续注意力</strong>和<strong>深度理解</strong>能力。</p>'],
+[13,'好奇心是最好的老师','好奇心是最好的老师。','真正深入的学习通常来自兴趣，而不是外部压力。','<p><strong>自我决定理论</strong>（Deci &amp; Ryan, 1985）指出，人类有三种基本心理需求：自主性、胜任感和关联性。好奇心驱动的学习满足了自主性和胜任感，是最强的内在动机来源。</p><p><span class="tag">神经科学</span> 好奇心激活大脑的<strong>奖励通路</strong>——中脑边缘多巴胺系统。Kang et al.（2009, <em>Neuron</em>）的 fMRI 研究发现，好奇心被激发时：海马体活动增强、记忆保留率提高、多巴胺释放促进长时程增强。</p><p><span class="tag">教育的悖论</span> 很多人学校讨厌学习、工作后爱上学习——因为学校教育破坏了好奇心（外部评价、标准化），而自我导向学习恢复了内在动机。</p>'],
+[14,'持续学习是最好的投资','持续学习是最好的投资。','知识会不断复利，让你的判断力和能力持续提升。','<p>从<strong>人力资本理论</strong>（Schultz, 1961; Becker, 1964）看，教育是最重要的人力资本投资。</p><p><span class="tag">知识折旧率</span> 技术领域的知识折旧率约每年 15-25%。如果你的知识不更新，人力资本每年贬值 15% 以上。持续学习不仅是"投资"，更是<strong>保值</strong>。</p><p><span class="tag">神经可塑性</span> 持续学习新的复杂技能（第二语言、乐器）维持和增强神经连接的可塑性（Merzenich, 2013）。大脑遵循"用进废退"原则。</p>'],
+[15,'真正的知识需要时间沉淀','真正的知识需要时间沉淀。','深度理解通常来自长期思考，而不是速成课程。','<p>这是对<strong>深度处理</strong>（Deep Processing）理论的经验总结。记忆加工层级理论指出，记忆持久性取决于处理深度（Craik &amp; Lockhart, 1972）。</p><p><span class="tag">睡眠与记忆巩固</span> NREM 睡眠负责陈述性记忆的巩固，REM 睡眠负责程序性记忆的整合和创造性重组（Stickgold &amp; Walker, 2013）。"睡一觉再思考"不是玄学。</p><p><span class="tag">概念转变</span> 真正的深度学习涉及颠覆和重组已有认知框架（Posner et al., 1982），本质上是缓慢的。信息可快速获取（3 分钟），知识需数月构建，智慧需数年沉淀。</p>'],
+[16,'多读基础学科','多读基础学科。','数学、科学、哲学等基础学科能帮助你理解世界的底层规律。','<p>基础学科共同构成<strong>底层认知框架</strong>。查理·芒格称之为"心智模型格栅"（Latticework of Mental Models）。</p><p><span class="tag">转移距离</span> 基础学科训练<strong>远迁移能力</strong>——抽象的模式识别和逻辑推理可在任何领域复用。应用学科训练近迁移，适用范围窄（Barnett &amp; Ceci, 2002）。</p><p><span class="tag">知识杠杆率</span> 学习一个基础原理（供需定律、力学定律、博弈论）可解释数以千计的具体现象。它们是"获得最多解释力的最少知识"。</p>'],
+[17,'避免从众思考','避免从众思考。','如果你的想法和所有人一样，很难获得超额回报。','<p><strong>从众效应（Conformity Bias）</strong>是进化遗留的生存策略——在原始环境中与众不同可能意味着危险。</p><ul><li><strong>阿施从众实验</strong>（Asch, 1951）：约 75% 的参与者至少有一次选择了群体的错误答案</li><li><strong>信息级联</strong>（Bikhchandani et al., 1992）：一点点早期噪音就能导致群体锁定在错误结论</li></ul><p><span class="tag">逆向投资</span> 大众共识的拥挤交易往往产生低回报（Stein, 2009）。超额回报不在于"总是逆反"，而在于"在共识错误时逆反"。</p>'],
+[18,'用第一性原理思考问题','用第一性原理思考问题。','把问题拆到最基本事实，再重新构建解决方案。','<p>第一性原理源自物理学和哲学——指不可再推导的基本命题。从最基本的定律出发推导结论，而非依赖类比。</p><p><span class="tag">马斯克三步法</span> ① 识别当前假设 ② 分解到基本事实 ③ 从底层重新构建</p><p><span class="tag">案例</span> 火箭价格高主要是"传统假设"（必须一次性使用），而非物理必然（原材料仅占价格 2%）。可回收火箭是显然的解决方案。</p><p><span class="tag">警告</span> 第一性原理认知负荷极高。低风险领域类比思维效率更高。关键是知道<strong>什么时候用哪种思维模式</strong>。</p>']
+];
+const root=document.getElementById('root');
+root.innerHTML=`<div class="section-header"><div class="section-svg"><svg viewBox="0 0 120 120"><rect x="28" y="60" width="64" height="6" rx="2" fill="${C}" opacity="0.2"/><rect x="26" y="53" width="68" height="7" rx="2" fill="${C}" opacity="0.3"/><rect x="24" y="45" width="72" height="8" rx="2" fill="${C}" opacity="0.45"/><rect x="22" y="36" width="76" height="9" rx="2" fill="${C}" opacity="0.6"/><rect x="20" y="26" width="80" height="10" rx="2" fill="${C}" opacity="0.8"/><line x1="20" y1="26" x2="20" y2="66" stroke="${C}" stroke-width="2" opacity="0.4"/><circle cx="94" cy="20" r="1.5" fill="${C}" opacity="0.5"/><circle cx="102" cy="30" r="1" fill="${C}" opacity="0.3"/></svg></div><div class="section-info"><div class="num">二 · 2/6</div><h2>学习与成长</h2><div class="desc">如何构建终身学习与深度认知的能力</div></div></div>`+
+data.map(d=>`<div class="principle"><div class="idx">#${d[0]} / 40</div><div class="title">${d[1]}</div><div class="orig-box"><div class="lbl">原文</div><div class="q">${d[2]}</div><div class="e">${d[3]}</div></div><div class="body">${d[4]}</div></div>`).join('')+
+`<div class="sec-end"><span></span><span></span><span></span></div>`;
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.principle').forEach(el=>obs.observe(el));
+</script></body></html>

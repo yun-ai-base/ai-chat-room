@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>时间与生活方式 · 纳瓦尔深度拓展</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet"><style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Serif SC',serif;background:#f9f7f4;color:#2c2c2c;line-height:1.9;-webkit-font-smoothing:antialiased}
+:root{--c:#8B7EAC}.top-bar{position:sticky;top:0;z-index:100;background:rgba(249,247,244,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.04);padding:0.7rem 1.5rem;display:flex;align-items:center;gap:0.8rem;font-size:0.82rem;font-family:'Inter',sans-serif}.top-bar a{color:#999;text-decoration:none;transition:color 0.2s}.top-bar a:hover{color:#333}.top-bar span{color:#ccc}.top-bar .sec-title{color:var(--c);font-weight:600;margin-left:auto;font-size:0.78rem;letter-spacing:0.03em}
+.hero-sm{background:linear-gradient(165deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);padding:3rem 1.5rem;text-align:center;position:relative;overflow:hidden}.hero-sm h1{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;color:#fff;position:relative;z-index:1}.hero-sm h1 em{font-style:normal;color:var(--c)}.hero-sm .sub{font-family:'Inter',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.4);margin-top:0.4rem;position:relative;z-index:1}
+main{max-width:800px;margin:0 auto;padding:2.5rem 1.2rem 4rem}
+.section-header{display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(0,0,0,0.05)}.section-svg{width:90px;height:90px;flex-shrink:0}.section-info .num{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;color:var(--c);opacity:0.5}.section-info h2{font-size:1.4rem;font-weight:700;color:var(--c);margin-top:0.1rem}.section-info .desc{font-size:0.82rem;color:#999;margin-top:0.2rem;font-family:'Inter',sans-serif}
+.principle{margin-bottom:2rem;padding:1.8rem;background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,0.02),0 4px 20px rgba(0,0,0,0.03);transition:all 0.3s;opacity:0;transform:translateY(16px)}.principle.visible{opacity:1;transform:translateY(0)}.principle:hover{box-shadow:0 2px 8px rgba(0,0,0,0.03),0 12px 40px rgba(0,0,0,0.05)}.principle .idx{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;color:var(--c);letter-spacing:0.08em;margin-bottom:0.5rem}.principle .title{font-size:1.05rem;font-weight:700;color:#1a1a2e;line-height:1.5;margin-bottom:0.8rem}.orig-box{border-left:3px solid var(--c);padding:0.7rem 1rem;border-radius:0 8px 8px 0;margin-bottom:1rem;background:rgba(0,0,0,0.012);font-size:0.88rem}.orig-box .lbl{font-family:'Inter',sans-serif;font-size:0.55rem;font-weight:600;letter-spacing:0.08em;color:var(--c);margin-bottom:0.15rem}.orig-box .q{font-weight:600;color:#1a1a2e}.orig-box .e{color:#888;margin-top:0.1rem;font-size:0.84rem}.body{font-size:0.9rem;line-height:1.8;color:#3a3a3a}.body strong{color:#1a1a2e;font-weight:700}.body .tag{display:inline-block;font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:600;color:var(--c);border:1px solid var(--c);border-radius:3px;padding:0.02rem 0.5rem;margin-right:0.25rem;opacity:0.65;white-space:nowrap}.body p{margin-bottom:0.5rem}.sec-end{display:flex;justify-content:center;gap:0.5rem;padding:1rem 0 0.5rem}.sec-end span{width:4px;height:4px;border-radius:50%;background:var(--c);opacity:0.2;animation:pulse 2s ease-in-out infinite}.sec-end span:nth-child(2){animation-delay:0.4s}.sec-end span:nth-child(3){animation-delay:0.8s}@keyframes pulse{0%,100%{opacity:0.2}50%{opacity:0.5}}
+footer{text-align:center;padding:2rem 1.5rem;font-family:'Inter',sans-serif;font-size:0.75rem;color:#bbb}
+@media(max-width:768px){
+  .top-bar{padding:0.5rem 0.8rem;font-size:0.72rem;flex-wrap:wrap;gap:0.4rem}
+  .top-bar .sec-title{font-size:0.68rem;margin-left:0;width:100%;text-align:right}
+  .hero-sm{padding:2rem 1rem}
+  .hero-sm h1{font-size:1.3rem}
+  .hero-sm .sub{font-size:0.72rem}
+  .section-header{flex-direction:column;gap:0.8rem;align-items:flex-start}
+  .section-svg{width:60px;height:60px}
+  .section-info h2{font-size:1.15rem}
+  .principle{padding:1.2rem;margin-bottom:1.2rem}
+  .principle .title{font-size:0.95rem}
+  .orig-box{font-size:0.82rem;padding:0.6rem 0.8rem}
+  .body{font-size:0.84rem}
+}
+@media(max-width:480px){
+  main{padding:1.2rem 0.6rem 2rem}
+  .principle{padding:1rem;border-radius:12px}
+  .principle .title{font-size:0.9rem}
+  .body{font-size:0.8rem}
+  .body .tag{font-size:0.6rem;padding:0 0.35rem}
+}
+</style></head><body>
+<div class="top-bar"><a href="naval-index.html">← 总览</a><span>|</span><span style="color:#999;font-size:0.75rem">纳瓦尔的40则人生建议</span><span class="sec-title">五 · 时间与生活方式</span></div>
+<div class="hero-sm"><h1>时间与<em>生活方式</em></h1><div class="sub">如何看待时间、精力与生活的基本面 · 5 条建议</div></div>
+<main id="root"></main>
+<footer>纳瓦尔的40则人生建议 · 深度拓展</footer>
+<script>
+const C='#8B7EAC',data=[
+[31,'时间是最稀缺的资源','时间是最稀缺的资源。','金钱可以赚回来，但时间无法重来。','<p>时间具有稀缺资源的所有极端特征：<strong>绝对有限</strong>、<strong>不可储存</strong>、<strong>不可替代</strong>、<strong>不可再生</strong>。相比之下，钱的稀缺是相对的。</p><p>时间不遵循边际效用递减：钱越多，1 块钱边际效用越低；时间越少，剩下 1 小时的边际效用<strong>递增</strong>。</p><p><span class="tag">时间贫困</span> "时间贫困"比"收入贫困"更能预测低幸福感和高焦虑水平（Whillans, 2019），生理效应包括皮质醇升高、睡眠质量下降。</p><p><span class="tag">用钱买时间</span> 习惯用钱买时间的人比花钱买东西的人报告更高的生活满意度（Whillans et al., 2017, <em>PNAS</em>）。</p>'],
+[32,'不要做自己不喜欢的事情','不要做自己不喜欢的事情。','长期做讨厌的事情很难持续成功。','<p><span class="tag">自我损耗</span> 强迫自己做不喜欢的事消耗<strong>自我控制资源</strong>。长期确实导致动机下降和倦怠。</p><p><span class="tag">工作重塑（Job Crafting）</span> 即使在"不能换工作"的限制下，仍可通过三种方式改善：任务重塑、关系重塑、认知重塑（Wrzesniewski &amp; Dutton, 2001）。</p><p><span class="tag">职业倦怠</span> 长期做不喜欢的事是倦怠的最强预测因子（Maslach &amp; Leiter, 1997），生理代价包括心血管疾病风险增加、免疫力下降。</p>'],
+[33,'远离负能量的人','远离负能量的人。','环境会深刻影响你的情绪和判断。','<p><strong>情绪传染（Emotional Contagion）</strong>——情绪通过自动的模仿和同步在人际间传播（Hatfield, Cacioppo &amp; Rapson, 1994）。</p><p><span class="tag">大规模实验证据</span> Facebook 情绪传染实验（Kramer et al., 2014, <em>PNAS</em>，689,003 人）证明情绪在社交网络大规模传染。</p><p><span class="tag">镜像神经元</span> 观察他人情绪表达时，你大脑中该情绪的脑区会被部分激活。 "有毒的人"实际上在你的神经系统中植入了有害的情绪活动。</p>'],
+[34,'健康是长期成功的基础','健康是长期成功的基础。','没有健康，财富和事业都失去意义。','<p><span class="tag">睡眠</span> 睡眠 &lt; 7 小时：交通事故风险增加 2-3 倍；睡眠 &lt; 6 小时持续 2 周：认知表现相当于 24 小时不睡（Walker, 2017, <em>Why We Sleep</em>）。</p><p><span class="tag">锻炼的大脑效应</span> 有氧运动增加<strong>BDNF</strong>（"大脑的肥料"），促进新神经元的生长（Ratey, 2008, <em>Spark</em>）。每周 3 次、30 分钟中等运动可提高执行功能和记忆力。</p><p><span class="tag">地基资产</span> 健康是唯一失去就<strong>无法替代</strong>的资产——失去财富可重新获得，但失去健康永久性地降低所有其他资产的回报率。</p>'],
+[35,'简化生活可以提高幸福感','简化生活可以提高幸福感。','减少不必要的选择和压力，能让生活更轻松。','<p><strong>选择过载（Choice Overload）</strong>——超过阈值后，选择增加导致决策瘫痪+后悔。经典果酱实验：24 种果酱购买率 3%，6 种果酱购买率 30%（Iyengar &amp; Lepper, 2000）。</p><p><span class="tag">决策疲劳</span> 每次决策消耗有限认知资源（Vohs et al., 2008）。简化生活 = 减少不必要的决策负担。</p><p><span class="tag">注意力税</span> 每个未使用的 App、每件多余的东西、每条未读消息都是"注意力税"——占用心理带宽，即使不主动关注。</p>']
+];
+const root=document.getElementById('root');
+root.innerHTML=`<div class="section-header"><div class="section-svg"><svg viewBox="0 0 120 120"><line x1="35" y1="18" x2="85" y2="18" stroke="${C}" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><line x1="35" y1="102" x2="85" y2="102" stroke="${C}" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><line x1="35" y1="18" x2="42" y2="102" stroke="${C}" stroke-width="1.2" opacity="0.35"/><line x1="85" y1="18" x2="78" y2="102" stroke="${C}" stroke-width="1.2" opacity="0.35"/><path d="M46 45 Q 60 50 74 45" stroke="${C}" stroke-width="0.8" fill="none" opacity="0.3"/><path d="M46 70 Q 60 80 74 70" stroke="${C}" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="56" cy="55" r="1" fill="${C}" opacity="0.5"/><circle cx="64" cy="58" r="1" fill="${C}" opacity="0.4"/></svg></div><div class="section-info"><div class="num">五 · 5/6</div><h2>时间与生活方式</h2><div class="desc">如何看待时间、精力与生活的基本面</div></div></div>`+
+data.map(d=>`<div class="principle"><div class="idx">#${d[0]} / 40</div><div class="title">${d[1]}</div><div class="orig-box"><div class="lbl">原文</div><div class="q">${d[2]}</div><div class="e">${d[3]}</div></div><div class="body">${d[4]}</div></div>`).join('')+
+`<div class="sec-end"><span></span><span></span><span></span></div>`;
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.principle').forEach(el=>obs.observe(el));
+</script></body></html>

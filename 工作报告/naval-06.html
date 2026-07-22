@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>思维方式 · 纳瓦尔深度拓展</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet"><style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Serif SC',serif;background:#f9f7f4;color:#2c2c2c;line-height:1.9;-webkit-font-smoothing:antialiased}
+:root{--c:#4A8C8C}.top-bar{position:sticky;top:0;z-index:100;background:rgba(249,247,244,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.04);padding:0.7rem 1.5rem;display:flex;align-items:center;gap:0.8rem;font-size:0.82rem;font-family:'Inter',sans-serif}.top-bar a{color:#999;text-decoration:none;transition:color 0.2s}.top-bar a:hover{color:#333}.top-bar span{color:#ccc}.top-bar .sec-title{color:var(--c);font-weight:600;margin-left:auto;font-size:0.78rem;letter-spacing:0.03em}
+.hero-sm{background:linear-gradient(165deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);padding:3rem 1.5rem;text-align:center;position:relative;overflow:hidden}.hero-sm h1{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;color:#fff;position:relative;z-index:1}.hero-sm h1 em{font-style:normal;color:var(--c)}.hero-sm .sub{font-family:'Inter',sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.4);margin-top:0.4rem;position:relative;z-index:1}
+main{max-width:800px;margin:0 auto;padding:2.5rem 1.2rem 4rem}
+.section-header{display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(0,0,0,0.05)}.section-svg{width:90px;height:90px;flex-shrink:0}.section-info .num{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;color:var(--c);opacity:0.5}.section-info h2{font-size:1.4rem;font-weight:700;color:var(--c);margin-top:0.1rem}.section-info .desc{font-size:0.82rem;color:#999;margin-top:0.2rem;font-family:'Inter',sans-serif}
+.principle{margin-bottom:2rem;padding:1.8rem;background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,0.02),0 4px 20px rgba(0,0,0,0.03);transition:all 0.3s;opacity:0;transform:translateY(16px)}.principle.visible{opacity:1;transform:translateY(0)}.principle:hover{box-shadow:0 2px 8px rgba(0,0,0,0.03),0 12px 40px rgba(0,0,0,0.05)}.principle .idx{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;color:var(--c);letter-spacing:0.08em;margin-bottom:0.5rem}.principle .title{font-size:1.05rem;font-weight:700;color:#1a1a2e;line-height:1.5;margin-bottom:0.8rem}.orig-box{border-left:3px solid var(--c);padding:0.7rem 1rem;border-radius:0 8px 8px 0;margin-bottom:1rem;background:rgba(0,0,0,0.012);font-size:0.88rem}.orig-box .lbl{font-family:'Inter',sans-serif;font-size:0.55rem;font-weight:600;letter-spacing:0.08em;color:var(--c);margin-bottom:0.15rem}.orig-box .q{font-weight:600;color:#1a1a2e}.orig-box .e{color:#888;margin-top:0.1rem;font-size:0.84rem}.body{font-size:0.9rem;line-height:1.8;color:#3a3a3a}.body strong{color:#1a1a2e;font-weight:700}.body .tag{display:inline-block;font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:600;color:var(--c);border:1px solid var(--c);border-radius:3px;padding:0.02rem 0.5rem;margin-right:0.25rem;opacity:0.65;white-space:nowrap}.body p{margin-bottom:0.5rem}.sec-end{display:flex;justify-content:center;gap:0.5rem;padding:1rem 0 0.5rem}.sec-end span{width:4px;height:4px;border-radius:50%;background:var(--c);opacity:0.2;animation:pulse 2s ease-in-out infinite}.sec-end span:nth-child(2){animation-delay:0.4s}.sec-end span:nth-child(3){animation-delay:0.8s}@keyframes pulse{0%,100%{opacity:0.2}50%{opacity:0.5}}
+footer{text-align:center;padding:2rem 1.5rem;font-family:'Inter',sans-serif;font-size:0.75rem;color:#bbb}
+@media(max-width:768px){
+  .top-bar{padding:0.5rem 0.8rem;font-size:0.72rem;flex-wrap:wrap;gap:0.4rem}
+  .top-bar .sec-title{font-size:0.68rem;margin-left:0;width:100%;text-align:right}
+  .hero-sm{padding:2rem 1rem}
+  .hero-sm h1{font-size:1.3rem}
+  .hero-sm .sub{font-size:0.72rem}
+  .section-header{flex-direction:column;gap:0.8rem;align-items:flex-start}
+  .section-svg{width:60px;height:60px}
+  .section-info h2{font-size:1.15rem}
+  .principle{padding:1.2rem;margin-bottom:1.2rem}
+  .principle .title{font-size:0.95rem}
+  .orig-box{font-size:0.82rem;padding:0.6rem 0.8rem}
+  .body{font-size:0.84rem}
+}
+@media(max-width:480px){
+  main{padding:1.2rem 0.6rem 2rem}
+  .principle{padding:1rem;border-radius:12px}
+  .principle .title{font-size:0.9rem}
+  .body{font-size:0.8rem}
+  .body .tag{font-size:0.6rem;padding:0 0.35rem}
+}
+</style></head><body>
+<div class="top-bar"><a href="naval-index.html">← 总览</a><span>|</span><span style="color:#999;font-size:0.75rem">纳瓦尔的40则人生建议</span><span class="sec-title">六 · 思维方式</span></div>
+<div class="hero-sm"><h1>思维<em>方式</em></h1><div class="sub">塑造高质量思考的底层框架 · 5 条建议</div></div>
+<main id="root"></main>
+<footer>纳瓦尔的40则人生建议 · 深度拓展</footer>
+<script>
+const C='#4A8C8C',data=[
+[36,'长期主义几乎总是赢','长期主义几乎总是赢。','大多数人追求短期结果，而长期策略更容易取得巨大成果。','<p><span class="tag">数学基础</span> 在幂律分布的世界中，极少数事件贡献绝大部分结果。短期主义捕获大量小机会（每个预期值低），长期主义抓住少量大机会（每个预期值高）。</p><p><span class="tag">时间偏好的经济学</span> 高贴现率（极度重视现在）的决策者长期回报系统性地低于低贴现率者（Frederick, Loewenstein &amp; O\'Donoghue, 2002）。</p><p><span class="tag">竞争维度转移</span> 长期主义的优势往往在于<strong>竞争对手的自我淘汰</strong>——大多数人因短期压力放弃了长期策略，长期主义者通过"坚持"本身获得了竞争优势。</p>'],
+[37,'真理不依赖共识','真理不依赖共识。','正确的事情往往一开始只有少数人相信。','<p><strong>科学革命的结构</strong>（库恩, 1962）：科学进步经过"常规科学→危机→革命"。每一次革命开始时，新范式都是<strong>少数派甚至一个人的观点</strong>。</p><p><span class="tag">哥白尼的案例</span> 日心说在 1543 年提出时无任何观测证据支持（望远镜 70 年后才发明），完全与当时共识相悖——但它是真理。</p><p><span class="tag">贝叶斯认知论</span> 科学真理 = 根据证据更新信念，而非根据共识调整观点。共识本身不提供信息增量。</p>'],
+[38,'用简单原则理解复杂世界','用简单原则理解复杂世界。','底层规律往往很简单，只是表面看起来复杂。','<p><strong>奥卡姆剃刀</strong>——"如无必要，勿增实体"。在具有相同解释力的假设中，最简单的通常最优。模型越复杂、参数越多，越容易过拟合。</p><p><span class="tag">心智模型</span> 芒格强调约 100 个跨学科心智模型足以理解世界大部分现象：复利、供需、临界质量、激励、帕累托原则等。</p><p><span class="tag">涌现</span> Wolfram（2002）展示简单规则通过重复迭代产生极其复杂的模式。理解底层规则 → 理解上层涌现的现象。</p>'],
+[39,'不要被社会默认路径束缚','不要被社会默认路径束缚。','传统成功路径（上学—工作—退休）并不是唯一选择。','<p><strong>社会时钟</strong>（Neugarten, 1965）——每个社会有隐性的人生时间表。违反社会时钟的人感受<strong>社会制裁</strong>，即使违反在理性上最优。</p><p><span class="tag">从众的机会成本</span> 遵循默认路径的最大代价不是"做得不好"的显性成本，而是<strong>不做其他事</strong>的机会成本：创业、转行、周游世界。</p><p><span class="tag">百岁人生</span> 随着寿命延长，"三段式人生"正在被"多段式人生"取代（Gratton &amp; Scott, 2016）。固守旧默认路径的人面临更大的适应性危机。</p>'],
+[40,'学会独立思考','学会独立思考。','只有独立判断，才能发现真正的机会。','<p><span class="tag">可训练性</span> 批判性思维可通过系统训练显著提高（meta 分析显示约 0.5-0.7 标准差效果，Abrami et al., 2008）。</p><p><span class="tag">知识诅咒</span> 独立思考需要在<strong>接收到外部观点之前</strong>形成自己的初步判断。在讨论前阅读材料并写下自己的观点，是有效的独立思考练习。</p><p><span class="tag">群体思维</span> Janis（1972）归纳八大症状：无懈可击的幻觉、集体合理化、从众压力、自我审查等。2-3 个即严重损害独立思考。</p><p><span class="tag">最终矛盾</span> 真正的独立思考者知道自己能力<strong>有限</strong>——在独立和接受外部信息之间寻找动态平衡。盲目的逆反不是独立思考，而是反向的从众。</p>']
+];
+const root=document.getElementById('root');
+root.innerHTML=`<div class="section-header"><div class="section-svg"><svg viewBox="0 0 120 120"><g stroke="${C}" stroke-width="0.8" opacity="0.3"><line x1="60" y1="20" x2="30" y2="50"/><line x1="60" y1="20" x2="90" y2="50"/><line x1="30" y1="50" x2="20" y2="85"/><line x1="30" y1="50" x2="60" y2="60"/><line x1="90" y1="50" x2="100" y2="85"/><line x1="90" y1="50" x2="60" y2="60"/><line x1="60" y1="60" x2="40" y2="90"/><line x1="60" y1="60" x2="80" y2="90"/></g><g fill="${C}"><circle cx="60" cy="20" r="4" opacity="0.65"/><circle cx="30" cy="50" r="3" opacity="0.45"/><circle cx="90" cy="50" r="3" opacity="0.45"/><circle cx="60" cy="60" r="3.5" opacity="0.55"/><circle cx="20" cy="85" r="2.5" opacity="0.35"/><circle cx="100" cy="85" r="2.5" opacity="0.35"/></g></svg></div><div class="section-info"><div class="num">六 · 6/6</div><h2>思维方式</h2><div class="desc">塑造高质量思考的底层框架</div></div></div>`+
+data.map(d=>`<div class="principle"><div class="idx">#${d[0]} / 40</div><div class="title">${d[1]}</div><div class="orig-box"><div class="lbl">原文</div><div class="q">${d[2]}</div><div class="e">${d[3]}</div></div><div class="body">${d[4]}</div></div>`).join('')+
+`<div class="sec-end"><span></span><span></span><span></span></div>`;
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.principle').forEach(el=>obs.observe(el));
+</script></body></html>

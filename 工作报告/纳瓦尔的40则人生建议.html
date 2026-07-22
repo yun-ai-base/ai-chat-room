@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纳瓦尔的40则人生建议 · 深度拓展</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700;900&family=LXGW+WenKai:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Serif SC', serif;
+  background: #f9f7f4;
+  color: #2c2c2c;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --c1: #C49B3C; --c2: #5B8C5A; --c3: #4A6FA5;
+  --c4: #C97B84; --c5: #8B7EAC; --c6: #4A8C8C;
+}
+
+/* ── Hero ── */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  padding: 2rem; position: relative; overflow: hidden;
+  background: linear-gradient(165deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+}
+.hero-bg-svg {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0;
+  opacity: 0.15; pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; max-width: 700px; }
+.hero-badge {
+  display: inline-block; font-family: 'Inter', sans-serif;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.1); padding: 0.4rem 1.2rem;
+  border-radius: 100px; margin-bottom: 2rem;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 900;
+  color: #fff; line-height: 1.25; letter-spacing: 0.02em;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #C49B3C, #D4A853);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub {
+  font-size: 1.1rem; color: rgba(255,255,255,0.55); margin-top: 1.2rem;
+  font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: 0.08em;
+}
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.25); font-size: 0.8rem; font-family: 'Inter', sans-serif;
+  letter-spacing: 0.1em; animation: bounce 2s infinite;
+}
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+/* ── Floating Nav ── */
+.floating-nav {
+  position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%);
+  z-index: 100; display: flex; gap: 0.25rem;
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(0,0,0,0.06); border-radius: 100px; padding: 0.4rem;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.06); transition: opacity 0.4s, transform 0.4s;
+}
+.floating-nav.hidden { opacity: 0; transform: translateX(-50%) translateY(-20px); pointer-events: none; }
+.floating-nav a {
+  text-decoration: none; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500;
+  color: #666; padding: 0.4rem 0.9rem; border-radius: 100px; transition: all 0.25s; white-space: nowrap;
+}
+.floating-nav a:hover { background: rgba(0,0,0,0.04); color: #222; }
+.floating-nav a.active { background: #1a1a2e; color: #fff; }
+
+/* ── Main ── */
+main { max-width: 920px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+
+/* ── Section ── */
+.section { margin-bottom: 6rem; position: relative; }
+.section:last-child { margin-bottom: 0; }
+
+/* ── Section Header with SVG ── */
+.section-header-wrap {
+  display: flex; align-items: center; gap: 2.5rem;
+  margin-bottom: 3rem; padding: 1.5rem 0; position: relative;
+}
+.section-header-wrap::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 1px; background: linear-gradient(90deg, var(--sec), transparent);
+}
+.section-svg { flex-shrink: 0; width: 120px; height: 120px; }
+.section-svg svg { width: 100%; height: 100%; }
+.section-header { flex: 1; }
+.section-header .section-number {
+  font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--sec); opacity: 0.5;
+}
+.section-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--sec);
+  letter-spacing: 0.03em; margin-top: 0.1rem;
+}
+.section-header .section-desc {
+  font-size: 0.9rem; color: #999; margin-top: 0.3rem; font-family: 'Inter', sans-serif; font-weight: 300;
+}
+
+/* ── Principle Card ── */
+.principle {
+  margin-bottom: 2.5rem; padding: 2rem 2.2rem;
+  background: #fff; border-radius: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03), 0 4px 24px rgba(0,0,0,0.04);
+  transition: all 0.3s; position: relative;
+  opacity: 0; transform: translateY(20px);
+}
+.principle.visible { opacity: 1; transform: translateY(0); }
+.principle:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 12px 48px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+.principle.visible:hover { transform: translateY(-2px); }
+.principle-index {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600;
+  color: var(--sec); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.7rem;
+}
+.principle-index svg { width: 16px; height: 16px; opacity: 0.6; }
+.principle-title {
+  font-size: 1.15rem; font-weight: 700; color: #1a1a2e;
+  line-height: 1.5; margin-bottom: 1rem; padding-left: 0;
+}
+
+/* ── Original Quote Box ── */
+.original-box {
+  border-left: 3px solid var(--sec);
+  padding: 0.8rem 1.2rem; border-radius: 0 10px 10px 0;
+  margin-bottom: 1.2rem; font-size: 0.92rem; line-height: 1.7;
+  background: rgba(0,0,0,0.015);
+}
+.original-box .orig-label {
+  font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--sec); margin-bottom: 0.2rem;
+}
+.original-box .orig-quote { font-weight: 600; color: #1a1a2e; }
+.original-box .orig-explain { color: #888; margin-top: 0.15rem; font-weight: 400; font-size: 0.88rem; }
+
+/* ── Body ── */
+.body-content { font-size: 0.93rem; line-height: 1.85; color: #3a3a3a; }
+.body-content strong { color: #1a1a2e; font-weight: 700; }
+.body-content em { font-style: italic; color: #999; }
+.body-content .label {
+  display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600;
+  color: var(--sec); border: 1px solid var(--sec); border-radius: 4px;
+  padding: 0.02rem 0.55rem; margin-right: 0.3rem; opacity: 0.7; white-space: nowrap;
+}
+.body-content ul { list-style: none; padding: 0.4rem 0 0.2rem 0.5rem; }
+.body-content ul li { position: relative; padding-left: 1.2rem; margin-bottom: 0.4rem; }
+.body-content ul li::before {
+  content: ''; position: absolute; left: 0; top: 0.75em;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--sec); opacity: 0.4;
+}
+.body-content p { margin-bottom: 0.55rem; }
+.body-content table {
+  width: 100%; border-collapse: collapse; margin: 0.8rem 0; font-size: 0.82rem; font-family: 'Inter', sans-serif;
+}
+.body-content th, .body-content td {
+  padding: 0.5rem 0.7rem; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.body-content th { font-weight: 600; color: var(--sec); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.body-content tr:last-child td { border-bottom: none; }
+.body-content code { font-family: 'Inter', monospace; font-size: 0.82em; background: rgba(0,0,0,0.04); padding: 0.1em 0.4em; border-radius: 4px; color: #555; }
+
+/* ── Section End Ornament ── */
+.section-end { display: flex; justify-content: center; padding: 1.5rem 0 0; gap: 0.6rem; }
+.section-end span {
+  width: 5px; height: 5px; border-radius: 50%; background: var(--sec); opacity: 0.2;
+  animation: pulse 2s ease-in-out infinite;
+}
+.section-end span:nth-child(2) { animation-delay: 0.4s; }
+.section-end span:nth-child(3) { animation-delay: 0.8s; }
+@keyframes pulse { 0%,100%{opacity:0.2} 50%{opacity:0.6} }
+
+/* ── Focus Quote (穿插在正文间的重点引述) ── */
+.focus-quote {
+  font-family: 'LXGW WenKai', serif; font-size: 1.05rem; color: var(--sec);
+  padding: 1rem 1.5rem; margin: 1rem 0; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.01), rgba(0,0,0,0.02));
+  text-align: center; line-height: 1.6; font-weight: 400;
+}
+
+/* ── Data Viz (嵌入式迷你图表) ── */
+.data-viz { text-align: center; margin: 1.2rem 0; }
+
+/* ── Footer ── */
+footer {
+  text-align: center; padding: 3rem 1.5rem 5rem;
+  font-family: 'Inter', sans-serif; font-size: 0.78rem; color: #bbb;
+}
+
+/* ── Back to Top ── */
+.back-top {
+  position: fixed; bottom: 2rem; right: 2rem;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #1a1a2e; color: #fff; border: none; cursor: pointer;
+  font-size: 1.2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: all 0.3s; opacity: 0; pointer-events: none; z-index: 50;
+}
+.back-top.visible { opacity: 1; pointer-events: auto; }
+.back-top:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.18); }
+
+@media (max-width: 640px) {
+  .floating-nav { top: auto; bottom: 0; left: 0; right: 0; transform: none; border-radius: 0; border: none; border-top:1px solid rgba(0,0,0,0.06); padding: 0.6rem 0.4rem; overflow-x: auto; justify-content: center; }
+  .floating-nav a { font-size: 0.6rem; padding: 0.3rem 0.6rem; }
+  .principle { padding: 1.5rem 1.2rem; }
+  main { padding: 2rem 1rem 5rem; }
+  .back-top { bottom: 5rem; right: 1rem; }
+  .section-header-wrap { flex-direction: column; gap: 1rem; }
+  .section-svg { width: 80px; height: 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ Hero ═══ -->
+<section class="hero">
+  <svg class="hero-bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C49B3C"/><stop offset="100%" stop-color="#4A6FA5"/></linearGradient>
+      <linearGradient id="hg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#C97B84"/><stop offset="100%" stop-color="#5B8C5A"/></linearGradient>
+    </defs>
+    <!-- 抽象星座网格 -->
+    <g stroke="rgba(255,255,255,0.06)" fill="none" stroke-width="0.5">
+      <line x1="100" y1="200" x2="350" y2="150"/><line x1="350" y1="150" x2="520" y2="320"/>
+      <line x1="520" y1="320" x2="420" y2="500"/><line x1="420" y1="500" x2="180" y2="480"/>
+      <line x1="180" y1="480" x2="100" y2="200"/>
+      <line x1="900" y1="100" x2="1200" y2="180"/><line x1="1200" y1="180" x2="1350" y2="350"/>
+      <line x1="1350" y1="350" x2="1200" y2="600"/><line x1="1200" y1="600" x2="950" y2="550"/>
+      <line x1="950" y1="550" x2="900" y2="100"/>
+      <line x1="350" y1="150" x2="900" y2="100"/>
+      <line x1="520" y1="320" x2="1350" y2="350"/>
+      <line x1="420" y1="500" x2="950" y2="550"/>
+      <line x1="180" y1="480" x2="1200" y2="600"/>
+      <line x1="600" y1="700" x2="750" y2="800"/><line x1="750" y1="800" x2="850" y2="700"/><line x1="850" y1="700" x2="600" y2="700"/>
+    </g>
+    <!-- 节点光晕 -->
+    <g fill="rgba(255,255,255,0.12)">
+      <circle cx="350" cy="150" r="4"/><circle cx="520" cy="320" r="3"/><circle cx="420" cy="500" r="3"/>
+      <circle cx="900" cy="100" r="4"/><circle cx="1200" cy="180" r="3.5"/><circle cx="1350" cy="350" r="3"/>
+      <circle cx="100" cy="200" r="2.5"/><circle cx="750" cy="800" r="3"/><circle cx="600" cy="700" r="2"/>
+    </g>
+    <!-- 细环 -->
+    <circle cx="720" cy="400" r="250" stroke="rgba(255,255,255,0.03)" fill="none" stroke-width="0.3"/>
+    <circle cx="720" cy="400" r="350" stroke="rgba(255,255,255,0.02)" fill="none" stroke-width="0.3"/>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-badge">Naval's 40 Principles</div>
+    <h1>纳瓦尔的<span>40</span>则人生建议<em> · 深度拓展</em></h1>
+    <p class="hero-sub">每条从科学原理、底层逻辑、实证研究、跨学科视角展开剖析</p>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ═══ Nav ═══ -->
+<nav class="floating-nav hidden" id="floatingNav">
+  <a href="#s1" class="active">财富</a>
+  <a href="#s2">学习</a>
+  <a href="#s3">职业</a>
+  <a href="#s4">幸福</a>
+  <a href="#s5">时间</a>
+  <a href="#s6">思维</a>
+</nav>
+
+<!-- ═══ Main ═══ -->
+<main id="mainContent"></main>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<footer>Based on Naval Ravikant's 40 Principles · Deep Dive</footer>
+
+<script>
+// ── Section SVG Illustrations ──
+const sectionSvgs = {
+  1: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sg1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#C49B3C" stop-opacity="0.2"/><stop offset="100%" stop-color="#C49B3C" stop-opacity="0.05"/></linearGradient></defs>
+    <!-- 复利曲线 -->
+    <path d="M10 100 Q 30 100 50 80 Q 70 55 90 30 Q 100 18 110 10" stroke="#C49B3C" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <!-- 柱状上升 -->
+    <rect x="20" y="88" width="8" height="12" rx="2" fill="#C49B3C" opacity="0.3"/>
+    <rect x="35" y="82" width="8" height="18" rx="2" fill="#C49B3C" opacity="0.4"/>
+    <rect x="50" y="72" width="8" height="28" rx="2" fill="#C49B3C" opacity="0.5"/>
+    <rect x="65" y="55" width="8" height="45" rx="2" fill="#C49B3C" opacity="0.6"/>
+    <rect x="80" y="30" width="8" height="70" rx="2" fill="#C49B3C" opacity="0.75"/>
+    <!-- 顶点光 -->
+    <circle cx="110" cy="10" r="3" fill="#C49B3C" opacity="0.5"/>
+  </svg>`,
+  2: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- 书本叠放 -->
+    <rect x="28" y="60" width="64" height="6" rx="2" fill="#5B8C5A" opacity="0.2"/>
+    <rect x="26" y="53" width="68" height="7" rx="2" fill="#5B8C5A" opacity="0.3"/>
+    <rect x="24" y="45" width="72" height="8" rx="2" fill="#5B8C5A" opacity="0.45"/>
+    <rect x="22" y="36" width="76" height="9" rx="2" fill="#5B8C5A" opacity="0.6"/>
+    <rect x="20" y="26" width="80" height="10" rx="2" fill="#5B8C5A" opacity="0.8"/>
+    <!-- 书脊 -->
+    <line x1="20" y1="26" x2="20" y2="66" stroke="#5B8C5A" stroke-width="2" opacity="0.4"/>
+    <!-- 知识星点 -->
+    <circle cx="94" cy="20" r="1.5" fill="#5B8C5A" opacity="0.5"/>
+    <circle cx="102" cy="30" r="1" fill="#5B8C5A" opacity="0.3"/>
+    <circle cx="98" cy="14" r="1" fill="#5B8C5A" opacity="0.4"/>
+    <circle cx="88" cy="12" r="0.8" fill="#5B8C5A" opacity="0.25"/>
+  </svg>`,
+  3: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- 指南针圆环 -->
+    <circle cx="60" cy="60" r="40" stroke="#4A6FA5" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <circle cx="60" cy="60" r="38" stroke="#4A6FA5" stroke-width="0.3" fill="none" opacity="0.15" stroke-dasharray="3 3"/>
+    <!-- 指针 -->
+    <line x1="60" y1="60" x2="60" y2="28" stroke="#4A6FA5" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="60" y1="60" x2="60" y2="92" stroke="#4A6FA5" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    <line x1="60" y1="60" x2="90" y2="60" stroke="#4A6FA5" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    <line x1="60" y1="60" x2="30" y2="60" stroke="#4A6FA5" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    <!-- 中心 -->
+    <circle cx="60" cy="60" r="3" fill="#4A6FA5" opacity="0.5"/>
+    <!-- 方向标 -->
+    <text x="60" y="20" text-anchor="middle" fill="#4A6FA5" font-size="8" font-family="Inter" font-weight="600" opacity="0.6">N</text>
+  </svg>`,
+  4: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- 涟漪/莲花抽象 -->
+    <circle cx="60" cy="60" r="45" stroke="#C97B84" stroke-width="0.5" fill="none" opacity="0.15"/>
+    <circle cx="60" cy="60" r="35" stroke="#C97B84" stroke-width="0.5" fill="none" opacity="0.2"/>
+    <circle cx="60" cy="60" r="25" stroke="#C97B84" stroke-width="0.5" fill="none" opacity="0.3"/>
+    <!-- 花瓣 -->
+    <path d="M60 60 Q 40 35 60 20 Q 80 35 60 60" fill="#C97B84" opacity="0.12"/>
+    <path d="M60 60 Q 85 40 100 60 Q 85 80 60 60" fill="#C97B84" opacity="0.12"/>
+    <path d="M60 60 Q 35 40 20 60 Q 35 80 60 60" fill="#C97B84" opacity="0.12"/>
+    <path d="M60 60 Q 80 85 60 100 Q 40 85 60 60" fill="#C97B84" opacity="0.12"/>
+    <!-- 中心 -->
+    <circle cx="60" cy="60" r="4" fill="#C97B84" opacity="0.5"/>
+    <circle cx="60" cy="60" r="2" fill="#C97B84" opacity="0.7"/>
+  </svg>`,
+  5: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- 沙漏抽象 -->
+    <line x1="35" y1="18" x2="85" y2="18" stroke="#8B7EAC" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+    <line x1="35" y1="102" x2="85" y2="102" stroke="#8B7EAC" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+    <line x1="35" y1="18" x2="42" y2="102" stroke="#8B7EAC" stroke-width="1.2" opacity="0.35"/>
+    <line x1="85" y1="18" x2="78" y2="102" stroke="#8B7EAC" stroke-width="1.2" opacity="0.35"/>
+    <!-- 流沙 - 顶部 -->
+    <path d="M46 45 Q 60 50 74 45" stroke="#8B7EAC" stroke-width="0.8" fill="none" opacity="0.3"/>
+    <path d="M50 50 Q 60 55 70 50" stroke="#8B7EAC" stroke-width="0.8" fill="none" opacity="0.2"/>
+    <!-- 流沙 - 底部堆积 -->
+    <path d="M46 70 Q 60 80 74 70" stroke="#8B7EAC" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <path d="M48 62 Q 60 72 72 62" stroke="#8B7EAC" stroke-width="1" fill="none" opacity="0.3"/>
+    <!-- 时间粒子 -->
+    <g fill="#8B7EAC">
+      <circle cx="56" cy="55" r="1" opacity="0.5"/>
+      <circle cx="64" cy="58" r="1" opacity="0.4"/>
+      <circle cx="58" cy="61" r="0.8" opacity="0.3"/>
+      <circle cx="62" cy="63" r="0.7" opacity="0.25"/>
+    </g>
+  </svg>`,
+  6: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- 思维网络 -->
+    <g stroke="#4A8C8C" stroke-width="0.8" opacity="0.3">
+      <line x1="60" y1="20" x2="30" y2="50"/><line x1="60" y1="20" x2="90" y2="50"/>
+      <line x1="30" y1="50" x2="20" y2="85"/><line x1="30" y1="50" x2="60" y2="60"/>
+      <line x1="90" y1="50" x2="100" y2="85"/><line x1="90" y1="50" x2="60" y2="60"/>
+      <line x1="60" y1="60" x2="40" y2="90"/><line x1="60" y1="60" x2="80" y2="90"/>
+      <line x1="20" y1="85" x2="40" y2="90"/><line x1="100" y1="85" x2="80" y2="90"/>
+      <line x1="60" y1="20" x2="60" y2="60"/><line x1="30" y1="50" x2="90" y2="50"/>
+    </g>
+    <!-- 节点 -->
+    <g fill="#4A8C8C">
+      <circle cx="60" cy="20" r="4" opacity="0.65"/>
+      <circle cx="30" cy="50" r="3" opacity="0.45"/>
+      <circle cx="90" cy="50" r="3" opacity="0.45"/>
+      <circle cx="60" cy="60" r="3.5" opacity="0.55"/>
+      <circle cx="20" cy="85" r="2.5" opacity="0.35"/>
+      <circle cx="100" cy="85" r="2.5" opacity="0.35"/>
+      <circle cx="40" cy="90" r="2" opacity="0.25"/>
+      <circle cx="80" cy="90" r="2" opacity="0.25"/>
+    </g>
+    <!-- 思维光 -->
+    <circle cx="60" cy="20" r="10" fill="#4A8C8C" opacity="0.06"/>
+  </svg>`
+};
+
+const principleIcons = {
+  1: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 1 L10 6 L15 6 L11 9.5 L13 15 L8 11.5 L3 15 L5 9.5 L1 6 L6 6 Z" fill="currentColor" opacity="0.5"/></svg>`,
+  2: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M2 14 L14 14 L14 12 L2 12 Z M4 10 L12 10 L12 4 L4 4 Z" fill="currentColor" opacity="0.4"/></svg>`,
+  3: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><path d="M8 2 L8 8 L12 12" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/></svg>`,
+  4: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 1 Q 12 5 8 9 Q 4 5 8 1 Z M8 7 Q 13 10 8 15 Q 3 10 8 7 Z" fill="currentColor" opacity="0.4"/></svg>`,
+  5: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/><path d="M8 2 A 6 6 0 0 1 14 8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/><circle cx="8" cy="8" r="1.5" fill="currentColor" opacity="0.4"/></svg>`,
+  6: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polygon points="8,2 14,6 14,12 8,14 2,12 2,6" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><circle cx="8" cy="8" r="2" fill="currentColor" opacity="0.3"/></svg>`,
+  7: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1 14 L6 8 L10 12 L15 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/><circle cx="15" cy="2" r="1.5" fill="currentColor" opacity="0.4"/></svg>`,
+  8: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 1 L11 5 L16 6 L12 10 L13 15 L8 12.5 L3 15 L4 10 L0 6 L5 5 Z" fill="none" stroke="currentColor" stroke-width="1" opacity="0.45"/></svg>`,
+  9: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/><text x="8" y="11" text-anchor="middle" fill="currentColor" font-size="9" font-family="Inter" font-weight="600" opacity="0.5">∞</text></svg>`,
+  10: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M4 4 L12 12 M12 4 L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/></svg>`,
+  11: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/><path d="M8 5 L8 11 M5 8 L11 8" stroke="currentColor" stroke-width="1.2" opacity="0.5"/></svg>`,
+  12: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="10" height="11" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.45"/><line x1="5" y1="7" x2="11" y2="7" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><line x1="5" y1="9" x2="9" y2="9" stroke="currentColor" stroke-width="0.8" opacity="0.35"/></svg>`,
+  13: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/><circle cx="8" cy="8" r="2" fill="currentColor" opacity="0.3"/><path d="M8 2 L8 3 M8 13 L8 14 M2 8 L3 8 M13 8 L14 8" stroke="currentColor" stroke-width="1" opacity="0.3"/></svg>`,
+  14: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 2 A 6 6 0 1 1 2 8" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/><polygon points="8,8 2,8 8,2" fill="currentColor" opacity="0.15"/></svg>`,
+  15: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/><circle cx="8" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.45"/><circle cx="8" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.55"/><circle cx="8" cy="8" r="0.8" fill="currentColor" opacity="0.5"/></svg>`,
+  16: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="10" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.45"/><line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="0.8" opacity="0.25"/><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="0.8" opacity="0.25"/></svg>`,
+  17: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="8" r="2.5" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/><circle cx="12" cy="8" r="2.5" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/><path d="M6.5 8 L9.5 8" stroke="currentColor" stroke-width="1.5" opacity="0.4"/></svg>`,
+  18: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M3 13 L8 8 L13 13 M3 3 L8 8 L13 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/></svg>`,
+  19: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1 14 L8 2 L15 14 Z" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/><circle cx="8" cy="10" r="1.5" fill="currentColor" opacity="0.3"/><line x1="8" y1="6" x2="8" y2="9" stroke="currentColor" stroke-width="1.2" opacity="0.35"/></svg>`,
+  20: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/><circle cx="11" cy="11" r="3" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/><line x1="7.5" y1="7.5" x2="8.5" y2="8.5" stroke="currentColor" stroke-width="1.2" opacity="0.3"/></svg>`,
+  21: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1 14 Q 4 12 6 10 Q 8 7 10 5 Q 12 3 15 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/><circle cx="15" cy="2" r="2" fill="currentColor" opacity="0.35"/></svg>`,
+  22: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.25"/><circle cx="6" cy="6" r="3" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><circle cx="10" cy="6" r="2.5" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><circle cx="8" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/></svg>`,
+  23: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 1 L8 15 M1 8 L15 8" stroke="currentColor" stroke-width="0.8" opacity="0.2"/><circle cx="8" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.45"/></svg>`,
+  24: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="4" height="7" rx="0.5" fill="currentColor" opacity="0.25"/><rect x="7" y="4" width="4" height="10" rx="0.5" fill="currentColor" opacity="0.4"/><rect x="12" y="1" width="3" height="13" rx="0.5" fill="currentColor" opacity="0.55"/></svg>`,
+  25: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="6" r="4" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/><path d="M4 12 Q 6 9 8 12 Q 10 9 12 12" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.35"/></svg>`,
+  26: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 14 L8 2 M8 2 L4 6 M8 2 L12 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/><path d="M4 10 L12 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>`,
+  27: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/><circle cx="8" cy="8" r="2" fill="currentColor" opacity="0.3"/></svg>`,
+  28: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.25"/><circle cx="8" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.4"/><circle cx="8" cy="8" r="1.5" fill="currentColor" opacity="0.3"/></svg>`,
+  29: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 14 L8 8 M8 8 L4 5 M8 8 L12 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/><circle cx="8" cy="4" r="1.5" fill="currentColor" opacity="0.3"/></svg>`,
+  30: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/><line x1="5" y1="5" x2="11" y2="11" stroke="currentColor" stroke-width="0.8" opacity="0.3"/><line x1="11" y1="5" x2="5" y2="11" stroke="currentColor" stroke-width="0.8" opacity="0.3"/></svg>`,
+  31: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/><path d="M8 4 L8 8 L11 10" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5"/></svg>`,
+  32: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/><circle cx="11" cy="11" r="3" fill="none" stroke="currentColor" stroke-width="1" opacity="0.2"/><path d="M8.5 8.5 L13 13" stroke="currentColor" stroke-width="1" opacity="0.2"/></svg>`,
+  33: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/><circle cx="11" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="1" opacity="0.15"/><line x1="8" y1="8" x2="8" y2="14" stroke="currentColor" stroke-width="1.2" opacity="0.3"/><line x1="6" y1="12" x2="10" y2="12" stroke="currentColor" stroke-width="1.2" opacity="0.3"/></svg>`,
+  34: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 1 Q 12 4 12 8 Q 12 12 8 15 Q 4 12 4 8 Q 4 4 8 1 Z" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/><line x1="8" y1="5" x2="8" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>`,
+  35: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="10" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.45"/><line x1="6" y1="8" x2="10" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>`,
+  36: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M3 14 L8 2 L13 14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.35"/><path d="M5 10 L8 6 L11 10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.5"/></svg>`,
+  37: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/><path d="M8 3 L8 8 L12 10" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><circle cx="3" cy="5" r="1.5" fill="currentColor" opacity="0.15"/><circle cx="13" cy="11" r="1.5" fill="currentColor" opacity="0.15"/></svg>`,
+  38: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1 8 L5 4 L9 8 L13 4" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.3"/><path d="M3 12 L8 7 L13 12" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/></svg>`,
+  39: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M2 14 L8 2 L14 14 Z" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/><path d="M5 10 L8 6 L11 10" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><circle cx="8" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.25"/></svg>`,
+  40: `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/><path d="M8 5 L8 11 M5 8 L11 8" stroke="currentColor" stroke-width="1.2" opacity="0.3"/><circle cx="8" cy="8" r="1.5" fill="currentColor" opacity="0.35"/></svg>`
+};
+
+// ── Data ──
+const sections = [
+  { id:'s1', num:'一', title:'财富与赚钱', color:'var(--c1)', desc:'财富的真正定义与创造的底层逻辑', si:1,
+    principles: [
+      { idx:1, title:'财富不是钱，而是能在你不工作时仍然赚钱的资产', icon:1,
+        quote:'财富不是钱，而是能在你不工作时仍然赚钱的资产。',
+        explain:'真正的财富是股票、公司股权、知识产权、软件等可以持续产生价值的东西，而不是一次性的工资收入。',
+        body:`<p>纳瓦尔对"财富"的定义与传统经济学中的"资本存量"概念高度吻合。经济学家欧文·费雪（Irving Fisher, 1930）在《利息理论》中提出：<strong>收入是一连串的事件，而资本是未来收入的折现</strong>。钱本身只是交换媒介，真正的财富是能持续产生现金流的资产。</p>
+<p>从<strong>会计学</strong>角度看，这区分了"资产负债表"和"利润表"——工资收入在利润表（一次性流入），而资产在资产负债表（持续产出）。从<strong>个人财务</strong>角度，这指向了"财务独立"（FI）运动的核心：当你的被动收入 ≥ 日常支出，你就实现了财务自由。FI 运动的数学基础是 <strong>4% 法则</strong>（Trinity Study, 1998）：持有 25 倍年支出的资产组合，历史上可持续提取 30 年。</p>
+<p><span class="label">神经科学</span> 多巴胺系统对"一次性奖励"反应强烈但短暂，而对"持续稳定收入流"的预期激活前额叶皮层的长期规划回路（McClure et al., 2004, <em>Science</em>），形成更稳定的心理安全感。</p>
+<p><span class="label">更深层</span> 这是在倡导从"时间换钱"的线性模式切换到"系统换钱"的指数模式。经济学家称此为"从劳动收入向资本收入的转变"（Piketty, 2014, <em>21世纪资本论</em>）。</p>`
+      },
+      { idx:2, title:'想致富就要拥有股权，而不是只出售时间', icon:2,
+        quote:'想致富就要拥有股权，而不是只出售时间。',
+        explain:'打工本质是时间换钱，而股权意味着你拥有企业的一部分，可以享受长期增长带来的回报。',
+        body:`<p>这背后的数学基础是<strong>收益的分布形态</strong>：出售时间的收入呈近似正态分布，而股权收益呈<strong>幂律分布</strong>（Power Law）——少数公司创造绝大部分回报。Venture Capital 的收益分布遵循 1% 的项目占据 90%+ 回报的规律（Kauffman Foundation, 2014）。</p>
+<p>从<strong>生产要素理论</strong>看，Piketty 的公式 <code>r &gt; g</code> 意味着拥有资本的人天然获得更大的财富份额。OECD 数据显示，劳动收入占 GDP 的比重从 1970 年代的约 65% 下降到 2020 年代的约 55%。</p>
+<p><span class="label">行为经济学</span> 出售时间有明确上限（一天 24 小时），而股权价值没有天然上限——这就是"规模效应"。</p>
+<p><span class="label">进化心理学</span> 人类大脑偏好"即时确定性回报"，对"未来不确定的大回报"本能回避。这解释了为什么大多数人选择打工而非创业。</p>`
+      },
+      { idx:3, title:'互联网让个人可以通过代码和媒体实现规模化', icon:3,
+        quote:'互联网让个人可以通过代码和媒体实现规模化。',
+        explain:'写软件、做内容、建立产品，一次创造可以服务无限用户，这就是现代最大的杠杆。',
+        body:`<p>这是<strong>杠杆（Leverage）</strong>理论的现代版本。纳瓦尔区分了三类杠杆：劳动力杠杆（雇人）、资本杠杆（用钱生钱）、代码和媒体杠杆（软件+内容）——最后一类<strong>无需许可</strong>（Permissionless），成本接近零。</p>
+<p>从<strong>信息经济学</strong>的视角，数字产品的<strong>边际成本趋近于零</strong>（Shapiro &amp; Varian, 1998）。GitHub 上一个开源项目、一篇公众号文章，服务第 1000 万个用户的成本几乎为零。</p>
+<p><strong>网络效应</strong>进一步放大这个杠杆：Metcalfe's Law 指出网络的价值与用户数的平方成正比。</p>`
+      },
+      { idx:4, title:'寻找可以长期复利的事业，而不是短期机会', icon:4,
+        quote:'寻找可以长期复利的事业，而不是短期机会。',
+        explain:'真正巨大的财富来自持续增长和时间复利，而不是短期投机。',
+        body:`<p><strong>复利</strong>被爱因斯坦称为"世界第八大奇迹"。其数学本质是 <code>A = P(1+r)^t</code>——关键在于时间 <code>t</code> 和持续的正回报率 <code>r</code>。</p>
+<p>商业世界中，复利的形式包括：<strong>客户复利</strong>（推荐率&gt;1 产生病毒式增长）、<strong>知识复利</strong>（深度理解加速相关领域）、<strong>品牌复利</strong>（认知度积累，营销成本递减）。</p>
+<p><span class="label">实证</span> 持有期从 1 年延长到 20 年，正回报概率从约 70% 上升到接近 100%（Dimson, Marsh &amp; Staunton, 2015）。</p>
+<p><span class="label">数学警告</span> 回撤 50% 需要 100% 涨幅才能回本。这就是为什么"不要亏钱"是复利策略的前提。</p>`
+      },
+      { idx:5, title:'把自己打造成独特的人（Specific Knowledge）', icon:5,
+        quote:'把自己打造成独特的人（Specific Knowledge）。',
+        explain:'当你的能力是独特组合（兴趣 + 天赋 + 经验）时，很少有人能与你直接竞争。',
+        body:`<p>这与经济学中的<strong>人力资本差异化</strong>理论高度一致。Gary Becker（1964, <em>Human Capital</em>）区分了<strong>通用人力资本</strong>和<strong>专有人力资本</strong>。</p>
+<p>从<strong>竞争战略</strong>角度，完全竞争市场中利润为零，只有差异化才能获得超额回报。独特的知识组合 = 个人层面的<strong>经济护城河</strong>。</p>
+<p><span class="label">心流理论</span> 当能力与挑战恰好在最佳匹配区时，产生最深层的学习和满足感（Csikszentmihalyi, 1990）。独特知识往往来源于"感兴趣且擅长的领域交集"。</p>
+<p><span class="label">进化生物学</span> 竞争排除原理（Gause, 1934）表明，完全同质化的技能导致恶性价格竞争，独特技能组合让你占据无人竞争的生态位。</p>`
+      },
+      { idx:6, title:'选择长期合作的伙伴，比短期聪明更重要', icon:6,
+        quote:'选择长期合作的伙伴，比短期聪明更重要。',
+        explain:'商业是长期游戏，和正直可靠的人合作比短期利益更关键。',
+        body:`<p>这是<strong>重复博弈</strong>（Repeated Game）理论在商业合作中的应用。阿克塞尔罗德（1984, <em>The Evolution of Cooperation</em>）证明，在重复囚徒困境中，最优策略是<strong>以牙还牙</strong>（Tit-for-Tat）。</p>
+<p>关键在于<strong>未来阴影</strong>（Shadow of the Future）：当双方预期长期合作时，合作成为理性选择。这不是道德建议，而是博弈论上的理性策略。</p>
+<p><span class="label">反直觉发现</span> "聪明但不正直"的伙伴在长期合作中比"正直但不聪明"的伙伴风险更大——不正直的聪明人能更精巧地隐藏背信行为（Babiak &amp; Hare, 2006）。</p>`
+      },
+      { idx:7, title:'用杠杆扩大自己的产出', icon:7,
+        quote:'用杠杆扩大自己的产出。',
+        explain:'代码、资本、媒体和团队都可以让你的努力产生指数级效果。',
+        body:`<p>纳瓦尔区分的三类杠杆各有不同特性：</p>
+<table><tr><th>类型</th><th>边际成本</th><th>管理难度</th><th>准入门槛</th></tr>
+<tr><td>劳动力</td><td>高</td><td>极高</td><td>中</td></tr>
+<tr><td>资本</td><td>低</td><td>中</td><td>高</td></tr>
+<tr><td>代码/媒体</td><td>趋近于零</td><td>低</td><td>极低</td></tr></table>
+<p><span class="label">认知心理学警示</span> 杠杆效应是双向的：策略正确则放大成功，错误则加速失败。这就是为什么纳瓦尔强调<strong>判断力</strong>（Judgment）比努力更重要。</p>`
+      },
+      { idx:8, title:'真正的财富来自创造价值，而不是转移价值', icon:8,
+        quote:'真正的财富来自创造价值，而不是转移价值。',
+        explain:'如果你创造新的产品和服务，财富会自然流向你，而不是靠零和竞争。',
+        body:`<p>这是经济学中<strong>正和博弈</strong>（Positive-Sum Game）与<strong>零和博弈</strong>（Zero-Sum Game）的核心区分。市场交易是典型的正和博弈——双方都获益，整体价值增加。</p>
+<p><span class="label">实证</span> 诺德豪斯（2004）发现，技术创新的社会回报率约为创新者私人回报率的 <strong>4 倍</strong>。创造新产品的人可能只获得 20% 的社会价值，社会获得其余 80%。</p>
+<p><span class="label">制度经济学</span> Acemoglu &amp; Robinson（2012, <em>Why Nations Fail</em>）区分了"包容性制度"（鼓励创造）和"榨取性制度"（鼓励转移）。前者国家繁荣，后者停滞。</p>`
+      },
+      { idx:9, title:'判断机会要看长期回报率', icon:9,
+        quote:'判断机会要看长期回报率。',
+        explain:'好的机会往往短期看起来不明显，但长期回报巨大。',
+        body:`<p>这对应金融学中<strong>净现值（NPV）</strong>和<strong>内部收益率（IRR）</strong>的概念。一个机会的价值是未来现金流的折现值减去初始投入。</p>
+<p><span class="label">认知偏差</span> 人类大脑存在<strong>双曲贴现</strong>（Hyperbolic Discounting）倾向——对近期回报的偏好远高于远期回报（Laibson, 1997），使我们系统性地低估长期机会。</p>
+<p><span class="label">实证</span> 最成功的 VC 投资中，超过一半在投资时看起来像"失败"（Peter Thiel）。大众共识已被定价，超额回报来自非共识的正确判断。</p>`
+      },
+      { idx:10, title:'不要和愚蠢的人做交易', icon:10,
+        quote:'不要和愚蠢的人做交易。',
+        explain:'不理性、缺乏诚信的人会在长期合作中带来巨大风险。',
+        body:`<p>这里的"愚蠢"指的是<strong>理性上的不可合作性</strong>，而非智商高低。</p>
+<p><span class="label">博弈论</span> 在重复博弈中，和不理性的人交易风险极高：对方无法理解长期合作价值、更容易背叛、行为不可预测。</p>
+<p><span class="label">柠檬市场</span> Akerlof（1970）指出，当无法区分好坏时，劣质品驱逐优质品。在人才市场，如果不主动筛选理性合作者，最终只有非理性者留在市场。</p>
+<p><span class="label">人格心理学</span> 大五人格中，<strong>宜人性</strong>和<strong>尽责性</strong>是预测长期合作质量最强的两个维度（Barrick &amp; Mount, 1991）。</p>`
+      }
+    ]
+  },
+  { id:'s2', num:'二', title:'学习与成长', desc:'如何构建终身学习与深度认知的能力', si:2,
+    principles: [
+      { idx:11, title:'学会如何学习，比学习具体知识更重要', icon:11,
+        quote:'学会如何学习，比学习具体知识更重要。',
+        explain:'知识会过时，但学习能力可以不断帮助你适应新世界。',
+        body:`<p><strong>元认知（Metacognition）</strong>——"对自己认知过程的认识和控制"——是现代学习科学的核心概念。近 40 年研究表明，元认知能力是学术和职业成功的<strong>最强预测因子之一</strong>，效应量甚至超过智商（Veenman et al., 2006）。</p>
+<p>具体知识有<strong>半衰期</strong>（科技领域约 2-5 年），但元学习能力不会过时——它让你在知识更新时快速重建知识结构。</p>
+<ul><li><strong>间隔重复</strong>：Ebbinghaus 遗忘曲线表明，最佳间隔重复将保留率从 20% 提升到 80%+</li>
+<li><strong>主动回忆</strong>：提取记忆的行为本身强化了记忆（Roediger &amp; Karpicke, 2006）</li>
+<li><strong>交错练习</strong>：混合不同类型的问题效果更好（Rohrer, 2012）</li>
+<li><strong>费曼技巧</strong>：用简单语言解释概念，暴露理解漏洞</li></ul>`
+      },
+      { idx:12, title:'读书是向历史上最聪明的人学习', icon:12,
+        quote:'读书是向历史上最聪明的人学习。',
+        explain:'书籍浓缩了人类智慧，是成本最低的学习方式。',
+        body:`<p>读书是<strong>人类最有效的间接学习机制</strong>。文字的发明让知识跨越时空传播——这是人类认知能力的第一次<strong>大规模外化</strong>。</p>
+<p><span class="label">经济学</span> 一本 200 页的书需要作者 1-5 年写就，读者花 10-20 小时就能获取作者数年的认知产出。</p>
+<p><span class="label">认知负荷理论</span> 优质书籍的信息组织方式大幅降低<strong>外在认知负荷</strong>，让更多资源用于真正理解概念（Sweller, 1988）。</p>
+<p><span class="label">神经科学</span> 深度阅读激活的脑区与浏览网页时显著不同（Wolf, 2018）。深度阅读训练<strong>持续注意力</strong>和<strong>深度理解</strong>能力。</p>`
+      },
+      { idx:13, title:'好奇心是最好的老师', icon:13,
+        quote:'好奇心是最好的老师。',
+        explain:'真正深入的学习通常来自兴趣，而不是外部压力。',
+        body:`<p><strong>自我决定理论</strong>（Deci &amp; Ryan, 1985）指出，人类有三种基本心理需求：自主性、胜任感和关联性。好奇心驱动的学习满足了自主性和胜任感，是最强的内在动机来源。</p>
+<p><span class="label">神经科学</span> 好奇心激活大脑的<strong>奖励通路</strong>——中脑边缘多巴胺系统。Kang et al.（2009, <em>Neuron</em>）的 fMRI 研究发现，好奇心被激发时：海马体活动增强、记忆保留率提高、多巴胺释放促进长时程增强。</p>
+<p><span class="label">教育的悖论</span> 很多人学校讨厌学习、工作后爱上学习——因为学校教育破坏了好奇心（外部评价、标准化），而自我导向学习恢复了内在动机。</p>`
+      },
+      { idx:14, title:'持续学习是最好的投资', icon:14,
+        quote:'持续学习是最好的投资。',
+        explain:'知识会不断复利，让你的判断力和能力持续提升。',
+        body:`<p>从<strong>人力资本理论</strong>（Schultz, 1961; Becker, 1964）看，教育是最重要的人力资本投资。</p>
+<p><span class="label">知识折旧率</span> 技术领域的知识折旧率约每年 15-25%。如果你的知识不更新，人力资本每年贬值 15% 以上。持续学习不仅是"投资"，更是<strong>保值</strong>。</p>
+<p><span class="label">神经可塑性</span> 持续学习新的复杂技能（第二语言、乐器）维持和增强神经连接的可塑性（Merzenich, 2013）。大脑遵循"用进废退"原则。</p>`
+      },
+      { idx:15, title:'真正的知识需要时间沉淀', icon:15,
+        quote:'真正的知识需要时间沉淀。',
+        explain:'深度理解通常来自长期思考，而不是速成课程。',
+        body:`<p>这是对<strong>深度处理</strong>（Deep Processing）理论的经验总结。记忆加工层级理论指出，记忆持久性取决于处理深度（Craik &amp; Lockhart, 1972）。</p>
+<p><span class="label">睡眠与记忆巩固</span> NREM 睡眠负责陈述性记忆的巩固，REM 睡眠负责程序性记忆的整合和创造性重组（Stickgold &amp; Walker, 2013）。"睡一觉再思考"不是玄学。</p>
+<p><span class="label">概念转变</span> 真正的深度学习涉及颠覆和重组已有认知框架（Posner et al., 1982），本质上是缓慢的。信息可快速获取（3 分钟），知识需数月构建，智慧需数年沉淀。</p>`
+      },
+      { idx:16, title:'多读基础学科', icon:16,
+        quote:'多读基础学科。',
+        explain:'数学、科学、哲学等基础学科能帮助你理解世界的底层规律。',
+        body:`<p>基础学科共同构成<strong>底层认知框架</strong>。查理·芒格称之为"心智模型格栅"（Latticework of Mental Models）。</p>
+<p><span class="label">转移距离</span> 基础学科训练<strong>远迁移能力</strong>——抽象的模式识别和逻辑推理可在任何领域复用。应用学科训练近迁移，适用范围窄（Barnett &amp; Ceci, 2002）。</p>
+<p><span class="label">知识杠杆率</span> 学习一个基础原理（供需定律、力学定律、博弈论）可解释数以千计的具体现象。它们是"获得最多解释力的最少知识"。</p>`
+      },
+      { idx:17, title:'避免从众思考', icon:17,
+        quote:'避免从众思考。',
+        explain:'如果你的想法和所有人一样，很难获得超额回报。',
+        body:`<p><strong>从众效应（Conformity Bias）</strong>是进化遗留的生存策略——在原始环境中与众不同可能意味着危险。</p>
+<ul><li><strong>阿施从众实验</strong>（Asch, 1951）：约 75% 的参与者至少有一次选择了群体的错误答案</li>
+<li><strong>信息级联</strong>（Bikhchandani et al., 1992）：一点点早期噪音就能导致群体锁定在错误结论</li></ul>
+<p><span class="label">逆向投资</span> 大众共识的拥挤交易往往产生低回报（Stein, 2009）。超额回报不在于"总是逆反"，而在于"在共识错误时逆反"。</p>`
+      },
+      { idx:18, title:'用第一性原理思考问题', icon:18,
+        quote:'用第一性原理思考问题。',
+        explain:'把问题拆到最基本事实，再重新构建解决方案。',
+        body:`<p>第一性原理源自物理学和哲学——指不可再推导的基本命题。从最基本的定律出发推导结论，而非依赖类比。</p>
+<p><span class="label">马斯克三步法</span> ① 识别当前假设 ② 分解到基本事实 ③ 从底层重新构建</p>
+<p><span class="label">案例</span> 火箭价格高主要是"传统假设"（必须一次性使用），而非物理必然（原材料仅占价格 2%）。可回收火箭是显然的解决方案。</p>
+<p><span class="label">警告</span> 第一性原理认知负荷极高。低风险领域类比思维效率更高。关键是知道<strong>什么时候用哪种思维模式</strong>。</p>`
+      }
+    ]
+  },
+  { id:'s3', num:'三', title:'职业与选择', desc:'职业路径中的关键决策与杠杆效应', si:3,
+    principles: [
+      { idx:19, title:'选择正确的行业，比努力程度更重要', icon:19,
+        quote:'选择正确的行业，比努力程度更重要。',
+        explain:'在增长行业里普通努力也能成功，在衰退行业里再努力也很难。',
+        body:`<p><strong>行业增长率效应</strong>有坚实的实证基础。在不同行业之间，同样能力的人收入差距可达 3-10 倍——这主要是行业增长率和利润结构的差异，而非个人能力（Krueger &amp; Summers, 1988）。</p>
+<p><span class="label">产业生命周期</span> 在成长期进入的人，即使能力一般，也随行业扩张获得红利；在衰退期的人，即使能力超群，也在逆水行舟。</p>
+<p><span class="label">沉没成本谬误</span> 人们倾向于留在已投入多年的萎缩行业——但过去投入的时间不应影响未来选择。</p>`
+      },
+      { idx:20, title:'选择和聪明、正直的人合作', icon:20,
+        quote:'选择和聪明、正直的人合作。',
+        explain:'优秀的人会放大你的能力，糟糕的人会拖累你。',
+        body:`<p><span class="label">团队生产理论</span> 最终产出是团队协同的产物，团队成员质量直接影响整体产出。</p>
+<p><span class="label">群体智慧</span> Woolley et al.（2010, <em>Science</em>）发现群体智慧的最佳预测因子是：社会敏感度、发言的平等性。正直是社会敏感度的基础。</p>
+<p><span class="label">知识溢出</span> 与聪明人相邻工作会接收到无法从书本获取的隐性知识和思维模式（Audretsch &amp; Feldman, 1996）。</p>`
+      },
+      { idx:21, title:'职业成功往往来自非线性回报', icon:21,
+        quote:'职业成功往往来自非线性回报。',
+        explain:'创业、投资、产品等领域，成功一次可能带来巨大回报。',
+        body:`<p><strong>幂律分布（Power Law Distribution）</strong>在职业成功中无处不在——无论是创业、科研、艺术还是体育，回报都呈极端偏态分布。</p>
+<p>两个核心机制：<strong>马太效应</strong>（初始微小优势通过累积放大）和<strong>偏好依附</strong>（新连接倾向于附着在已有连接的节点上）。</p>
+<p><span class="label">合理策略</span> 接受<strong>大量小规模实验</strong>，用统计学概率对冲幂律的不确定性——风险投资的"撒网"策略：少数成功弥补所有损失。</p>`
+      },
+      { idx:22, title:'找到你天生擅长且社会需要的事情', icon:22,
+        quote:'找到你天生擅长且社会需要的事情。',
+        explain:'最好的职业是天赋、兴趣和市场需求的交集。',
+        body:`<p>这是个人版的"市场匹配"——你的供应（天赋+兴趣）与社会需求（市场需要）的交集。</p>
+<p><span class="label">Ikigai 模型</span> 四圆交集：热爱的 × 擅长的 × 世界需要的 × 能获报酬的。</p>
+<p><span class="label">优势理论</span> Gallup 基于 40 年研究发现，专注于发挥优势而非弥补短板，工作效率和幸福指数显著更高（Clifton &amp; Harter, 2003）。</p>`
+      },
+      { idx:23, title:'不要只为钱工作', icon:23,
+        quote:'不要只为钱工作。',
+        explain:'如果只看短期收入，往往会错过长期成长机会。',
+        body:`<p><span class="label">过度合理化效应</span> 当人们对活动有内在兴趣时，引入外部奖励反而会降低内在动机（Lepper et al., 1973）。</p>
+<p><span class="label">享乐适应</span> 年收入约 $75,000 后，收入增长不再显著提升日常情绪幸福感（Kahneman &amp; Deaton, 2010）。但为高薪选择不喜欢的高压行业带来的痛苦没有这种适应机制。</p>
+<p><span class="label">职业资本</span> 最佳选择不是最大化当前收入，而是最大化<strong>职业资本</strong>——技能、经验、人脉和声誉（Ibarra, 2003）。</p>`
+      },
+      { idx:24, title:'把时间花在高杠杆的事情上', icon:24,
+        quote:'把时间花在高杠杆的事情上。',
+        explain:'比如创造产品、建立系统，而不是重复性的工作。',
+        body:`<p><strong>帕累托原则（80/20 法则）</strong>——约 20% 的活动创造 80% 的价值。识别这 20% 并将其放大就是"高杠杆事情"的核心。</p>
+<p><span class="label">时间管理矩阵</span> 高杠杆事情往往是"重要但不紧急"的——长期战略、能力建设、关系维护。它们容易被无限推迟，但长期杠杆率最高。</p>
+<p><span class="label">注意力管理</span> 注意力切换成本是知识工作中最大的隐性成本。每次切换平均需约 23 分钟才能重新进入深度工作状态（Mark et al., 2005）。</p>`
+      }
+    ]
+  },
+  { id:'s4', num:'四', title:'幸福与人生', desc:'幸福的科学基础与内在修炼路径', si:4,
+    principles: [
+      { idx:25, title:'幸福是一种技能，可以训练', icon:25,
+        quote:'幸福是一种技能，可以训练。',
+        explain:'通过冥想、思考和习惯调整，人可以改变自己的心理状态。',
+        body:`<p><strong>神经可塑性（Neuroplasticity）</strong>从根本上支持了这一论断。大脑根据经验持续重组——冥想、感恩练习、认知行为训练都能在结构上改变大脑。</p>
+<p><span class="label">遗传率 vs 可训练性</span> 双生子研究（Lykken &amp; Tellegen, 1996）显示幸福感遗传率约 40-50%，剩下 50-60% 由环境和自主行为决定。通过训练可将幸福感保持在更高区间。</p>
+<p><span class="label">积极心理学干预</span> Seligman 等（2005）RCT 证明：每天记录三件好事（6 月后效果仍显著）、感恩拜访（幸福感提升持续 3 月+）、运用标志性优势——均能显著提升幸福感。</p>`
+      },
+      { idx:26, title:'幸福来自降低欲望', icon:26,
+        quote:'幸福来自降低欲望。',
+        explain:'当欲望减少时，你更容易感到满足。',
+        body:`<p><strong>享乐适应（Hedonic Adaptation）</strong>或"享乐跑步机"理论——无论积极还是消极事件，大多数人最终回到相对稳定的幸福感基线（Brickman &amp; Campbell, 1971）。</p>
+<p><span class="label">欲望 vs 满足的神经科学</span> Kent Berridge 区分了"想要"（多巴胺驱动，无限增长）和"喜欢"（阿片系统驱动，有天然上限）。满足一个欲望不会减少下一个欲望的强度。</p>
+<p><span class="label">减法幸福</span> 解决方式不是"满足所有欲望"（不可能），而是<strong>管理欲望</strong>——主动选择你在意什么，而非被进化程序驱使。</p>`
+      },
+      { idx:27, title:'幸福是不后悔过去，也不焦虑未来', icon:27,
+        quote:'幸福是不后悔过去，也不焦虑未来。',
+        explain:'真正的幸福来自活在当下。',
+        body:`<p>人类大脑最独特的能力之一——<strong>心理时间旅行</strong>：回到过去（后悔）和预演未来（焦虑）。适量时有益，过度则变成痛苦来源。</p>
+<p><span class="label">正念的神经科学</span> 8 周正念训练导致：后扣带皮层（DMN，自我参照和思绪漫游）活动降低、前扣带皮层（注意力调控）增强、前额叶-杏仁核连接加强（Holzel et al., 2011）。</p>
+<p><span class="label">默认模式网络（DMN）</span> DMN 正是"后悔过去、焦虑未来"的神经基础。冥想经验丰富者的 DMN 活动更少（Brewer et al., 2011）。</p>`
+      },
+      { idx:28, title:'内心平静比外在成功更重要', icon:28,
+        quote:'内心平静比外在成功更重要。',
+        explain:'外部成就无法持续带来满足感，但内心状态可以。',
+        body:`<p><span class="label">自主神经系统</span> 内心平静的生理基础是<strong>副交感神经系统（PNS）</strong>的优势。高心率变异性（HRV）与更好的情绪调节和抗压能力相关。</p>
+<p><span class="label">心理韧性</span> 创伤后成长研究发现，经历重大创伤后反而更强大的人共有的特质是"内在稳定性"（Tedeschi &amp; Calhoun, 2004）。内心平静<strong>抗脆弱</strong>（Antifragile, Taleb, 2012）。</p>
+<p><span class="label">东西方共识</span> 斯多葛学派的"控制二分法"、道家的"无为"、佛家的"涅槃"——都指向内心安宁。</p>`
+      },
+      { idx:29, title:'不要把幸福寄托在未来目标', icon:29,
+        quote:'不要把幸福寄托在未来目标。',
+        explain:'如果你总觉得"等成功了才快乐"，那你永远不会快乐。',
+        body:`<p><strong>"到达谬误"（Arrival Fallacy）</strong>——认为"当 X 发生时我就会幸福"的系统性认知偏差。达到目标后的幸福感提升短暂且有限（Brickman et al., 1978）。</p>
+<p><span class="label">目标梯度效应</span> 目标越近动机越强——追求过程（多巴胺驱动）的奖赏性超过达成后的满足（阿片系统，短暂）。</p>
+<p><span class="label">内在 vs 外在目标</span> 追求内在目标（个人成长、人际关系）比外在目标（财富、名声）带来更可持续的满足感（Kasser &amp; Ryan, 1996）。</p>`
+      },
+      { idx:30, title:'冥想可以帮助理解自己的思想', icon:30,
+        quote:'冥想可以帮助理解自己的思想。',
+        explain:'冥想能让人观察自己的情绪和想法，从而获得内心稳定。',
+        body:`<p><span class="label">冥想与元认知</span> 冥想的本质是训练<strong>元认知觉知</strong>——对自身思维过程的观察能力。你是在观察自己在思考，就像坐在岸边看河水流动。</p>
+<ul><li><strong>前额叶皮层激活增强</strong>：专注型冥想增强背外侧前额叶的活动</li>
+<li><strong>默认模式网络抑制</strong>：开放式冥想降低 DMN 活动——"思绪漫游"的神经回路</li>
+<li><strong>岛叶激活增强</strong>：增强对自己身体和情绪状态的感知</li></ul>
+<p><span class="label">实证</span> 47 项 RCT 的元分析（Goyal et al., 2014, <em>JAMA Internal Medicine</em>）发现冥想对焦虑、抑郁和疼痛的改善有中等效应量，效果与抗抑郁药物相当（无副作用）。</p>`
+      }
+    ]
+  },
+  { id:'s5', num:'五', title:'时间与生活方式', desc:'如何看待时间、精力与生活的基本面', si:5,
+    principles: [
+      { idx:31, title:'时间是最稀缺的资源', icon:31,
+        quote:'时间是最稀缺的资源。',
+        explain:'金钱可以赚回来，但时间无法重来。',
+        body:`<p>时间具有稀缺资源的所有极端特征：<strong>绝对有限</strong>、<strong>不可储存</strong>、<strong>不可替代</strong>、<strong>不可再生</strong>。相比之下，钱的稀缺是相对的。</p>
+<p>时间不遵循边际效用递减：钱越多，1 块钱边际效用越低；时间越少，剩下 1 小时的边际效用<strong>递增</strong>。</p>
+<p><span class="label">时间贫困</span> "时间贫困"比"收入贫困"更能预测低幸福感和高焦虑水平（Whillans, 2019），生理效应包括皮质醇升高、睡眠质量下降。</p>
+<p><span class="label">用钱买时间</span> 习惯用钱买时间的人比花钱买东西的人报告更高的生活满意度（Whillans et al., 2017, <em>PNAS</em>）。</p>`
+      },
+      { idx:32, title:'不要做自己不喜欢的事情', icon:32,
+        quote:'不要做自己不喜欢的事情。',
+        explain:'长期做讨厌的事情很难持续成功。',
+        body:`<p><span class="label">自我损耗</span> 强迫自己做不喜欢的事消耗<strong>自我控制资源</strong>。长期确实导致动机下降和倦怠。</p>
+<p><span class="label">工作重塑（Job Crafting）</span> 即使在"不能换工作"的限制下，仍可通过三种方式改善：任务重塑、关系重塑、认知重塑（Wrzesniewski &amp; Dutton, 2001）。</p>
+<p><span class="label">职业倦怠</span> 长期做不喜欢的事是倦怠的最强预测因子（Maslach &amp; Leiter, 1997），生理代价包括心血管疾病风险增加、免疫力下降。</p>`
+      },
+      { idx:33, title:'远离负能量的人', icon:33,
+        quote:'远离负能量的人。',
+        explain:'环境会深刻影响你的情绪和判断。',
+        body:`<p><strong>情绪传染（Emotional Contagion）</strong>——情绪通过自动的模仿和同步在人际间传播（Hatfield, Cacioppo &amp; Rapson, 1994）。</p>
+<p><span class="label">大规模实验证据</span> Facebook 情绪传染实验（Kramer et al., 2014, <em>PNAS</em>，689,003 人）证明情绪在社交网络大规模传染。</p>
+<p><span class="label">镜像神经元</span> 观察他人情绪表达时，你大脑中该情绪的脑区会被部分激活。 "有毒的人"实际上在你的神经系统中植入了有害的情绪活动。</p>`
+      },
+      { idx:34, title:'健康是长期成功的基础', icon:34,
+        quote:'健康是长期成功的基础。',
+        explain:'没有健康，财富和事业都失去意义。',
+        body:`<p><span class="label">睡眠</span> 睡眠 &lt; 7 小时：交通事故风险增加 2-3 倍；睡眠 &lt; 6 小时持续 2 周：认知表现相当于 24 小时不睡（Walker, 2017, <em>Why We Sleep</em>）。</p>
+<p><span class="label">锻炼的大脑效应</span> 有氧运动增加<strong>BDNF</strong>（"大脑的肥料"），促进新神经元的生长（Ratey, 2008, <em>Spark</em>）。每周 3 次、30 分钟中等运动可提高执行功能和记忆力。</p>
+<p><span class="label">地基资产</span> 健康是唯一失去就<strong>无法替代</strong>的资产——失去财富可重新获得，但失去健康永久性地降低所有其他资产的回报率。</p>`
+      },
+      { idx:35, title:'简化生活可以提高幸福感', icon:35,
+        quote:'简化生活可以提高幸福感。',
+        explain:'减少不必要的选择和压力，能让生活更轻松。',
+        body:`<p><strong>选择过载（Choice Overload）</strong>——超过阈值后，选择增加导致决策瘫痪+后悔。经典果酱实验：24 种果酱购买率 3%，6 种果酱购买率 30%（Iyengar &amp; Lepper, 2000）。</p>
+<p><span class="label">决策疲劳</span> 每次决策消耗有限认知资源（Vohs et al., 2008）。简化生活 = 减少不必要的决策负担。</p>
+<p><span class="label">注意力税</span> 每个未使用的 App、每件多余的东西、每条未读消息都是"注意力税"——占用心理带宽，即使不主动关注。</p>`
+      }
+    ]
+  },
+  { id:'s6', num:'六', title:'思维方式', desc:'塑造高质量思考的底层框架', si:6,
+    principles: [
+      { idx:36, title:'长期主义几乎总是赢', icon:36,
+        quote:'长期主义几乎总是赢。',
+        explain:'大多数人追求短期结果，而长期策略更容易取得巨大成果。',
+        body:`<p><span class="label">数学基础</span> 在幂律分布的世界中，极少数事件贡献绝大部分结果。短期主义捕获大量小机会（每个预期值低），长期主义抓住少量大机会（每个预期值高）。</p>
+<p><span class="label">时间偏好的经济学</span> 高贴现率（极度重视现在）的决策者长期回报系统性地低于低贴现率者（Frederick, Loewenstein &amp; O'Donoghue, 2002）。</p>
+<p><span class="label">竞争维度转移</span> 长期主义的优势往往在于<strong>竞争对手的自我淘汰</strong>——大多数人因短期压力放弃了长期策略，长期主义者通过"坚持"本身获得了竞争优势。</p>`
+      },
+      { idx:37, title:'真理不依赖共识', icon:37,
+        quote:'真理不依赖共识。',
+        explain:'正确的事情往往一开始只有少数人相信。',
+        body:`<p><strong>科学革命的结构</strong>（库恩, 1962）：科学进步经过"常规科学→危机→革命"。每一次革命开始时，新范式都是<strong>少数派甚至一个人的观点</strong>。</p>
+<p><span class="label">哥白尼的案例</span> 日心说在 1543 年提出时无任何观测证据支持（望远镜 70 年后才发明），完全与当时共识相悖——但它是真理。</p>
+<p><span class="label">贝叶斯认知论</span> 科学真理 = 根据证据更新信念，而非根据共识调整观点。共识本身不提供信息增量。</p>`
+      },
+      { idx:38, title:'用简单原则理解复杂世界', icon:38,
+        quote:'用简单原则理解复杂世界。',
+        explain:'底层规律往往很简单，只是表面看起来复杂。',
+        body:`<p><strong>奥卡姆剃刀</strong>——"如无必要，勿增实体"。在具有相同解释力的假设中，最简单的通常最优。模型越复杂、参数越多，越容易过拟合。</p>
+<p><span class="label">心智模型</span> 芒格强调约 100 个跨学科心智模型足以理解世界大部分现象：复利、供需、临界质量、激励、帕累托原则等。</p>
+<p><span class="label">涌现</span> Wolfram（2002）展示简单规则通过重复迭代产生极其复杂的模式。理解底层规则 → 理解上层涌现的现象。</p>`
+      },
+      { idx:39, title:'不要被社会默认路径束缚', icon:39,
+        quote:'不要被社会默认路径束缚。',
+        explain:'传统成功路径（上学—工作—退休）并不是唯一选择。',
+        body:`<p><strong>社会时钟</strong>（Neugarten, 1965）——每个社会有隐性的人生时间表。违反社会时钟的人感受<strong>社会制裁</strong>，即使违反在理性上最优。</p>
+<p><span class="label">从众的机会成本</span> 遵循默认路径的最大代价不是"做得不好"的显性成本，而是<strong>不做其他事</strong>的机会成本：创业、转行、周游世界。</p>
+<p><span class="label">百岁人生</span> 随着寿命延长，"三段式人生"正在被"多段式人生"取代（Gratton &amp; Scott, 2016）。固守旧默认路径的人面临更大的适应性危机。</p>`
+      },
+      { idx:40, title:'学会独立思考', icon:40,
+        quote:'学会独立思考。',
+        explain:'只有独立判断，才能发现真正的机会。',
+        body:`<p><span class="label">可训练性</span> 批判性思维可通过系统训练显著提高（meta 分析显示约 0.5-0.7 标准差效果，Abrami et al., 2008）。</p>
+<p><span class="label">知识诅咒</span> 独立思考需要在<strong>接收到外部观点之前</strong>形成自己的初步判断。在讨论前阅读材料并写下自己的观点，是有效的独立思考练习。</p>
+<p><span class="label">群体思维</span> Janis（1972）归纳八大症状：无懈可击的幻觉、集体合理化、从众压力、自我审查等。2-3 个即严重损害独立思考。</p>
+<p><span class="label">最终矛盾</span> 真正的独立思考者知道自己能力<strong>有限</strong>——在独立和接受外部信息之间寻找动态平衡。盲目的逆反不是独立思考，而是反向的从众。</p>`
+      }
+    ]
+  }
+];
+
+// ── Render ──
+const main = document.getElementById('mainContent');
+sections.forEach((sec, si) => {
+  const section = document.createElement('section');
+  section.className = `section`;
+  section.id = sec.id;
+  section.style.setProperty('--sec', `var(--c${sec.si})`);
+
+  // Header with SVG
+  const wrap = document.createElement('div');
+  wrap.className = 'section-header-wrap';
+  wrap.innerHTML = `
+    <div class="section-svg">${sectionSvgs[sec.si]}</div>
+    <div class="section-header">
+      <div class="section-number">${sec.num} · ${si+1}/${sections.length}</div>
+      <h2>${sec.title}</h2>
+      <div class="section-desc">${sec.desc}</div>
+    </div>
+  `;
+  section.appendChild(wrap);
+
+  // Principles
+  sec.principles.forEach((p, pi) => {
+    const card = document.createElement('div');
+    card.className = 'principle';
+    card.innerHTML = `
+      <div class="principle-index">${principleIcons[p.icon] || ''} #${p.idx} / 40</div>
+      <div class="principle-title">${p.title}</div>
+      <div class="original-box">
+        <div class="orig-label">原文</div>
+        <div class="orig-quote">${p.quote}</div>
+        <div class="orig-explain">${p.explain}</div>
+      </div>
+      <div class="body-content">${p.body}</div>
+    `;
+    section.appendChild(card);
+    if (pi < sec.principles.length - 1) {
+      const d = document.createElement('div');
+      d.style.cssText = 'height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,0.04),transparent);margin:0 0 2.5rem';
+      section.appendChild(d);
+    }
+  });
+
+  // End ornament
+  const end = document.createElement('div');
+  end.className = 'section-end';
+  end.innerHTML = '<span></span><span></span><span></span>';
+  section.appendChild(end);
+  main.appendChild(section);
+});
+
+// ── Intersection Observer ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.principle').forEach(el => observer.observe(el));
+
+// ── Floating Nav ──
+const nav = document.getElementById('floatingNav');
+const navLinks = nav.querySelectorAll('a');
+const heroObs = new IntersectionObserver(([e]) => {
+  nav.classList.toggle('hidden', e.isIntersecting);
+}, { threshold: 0 });
+heroObs.observe(document.querySelector('.hero'));
+
+// ── Scroll-based nav active (more reliable than IntersectionObserver for sticky nav) ──
+function updateActiveNav() {
+  const scrollY = window.scrollY + 120;
+  let activeId = 's1';
+  document.querySelectorAll('.section').forEach(el => {
+    const top = el.offsetTop;
+    const bottom = top + el.offsetHeight;
+    if (scrollY >= top && scrollY < bottom) activeId = el.id;
+  });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${activeId}`));
+}
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+window.addEventListener('resize', updateActiveNav);
+// run once on load too
+setTimeout(updateActiveNav, 100);
+
+// ── Back to Top ──
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => { backTop.classList.toggle('visible', window.scrollY > 600); });
+</script>
+</body>
+</html>
